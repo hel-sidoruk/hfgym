@@ -6,14 +6,14 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.container}`}>
-        <Link href="/">
-          <a className={styles.logo}>
-            <Image
-              layout="fill"
-              src="/images/logo-footer.png"
-              alt="HolyFamily logo"
-            />
-          </a>
+        <Link href="/" className={styles.logo}>
+
+          <Image
+            layout="fill"
+            src="/images/logo-footer.png"
+            alt="HolyFamily logo"
+          />
+
         </Link>
         <div className={styles.info}>
           <p className={styles.text}>Мы в социальных сетях:</p>

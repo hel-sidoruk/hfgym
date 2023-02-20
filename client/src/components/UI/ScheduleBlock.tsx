@@ -14,8 +14,8 @@ const ScheduleBlock = ({ day, trainings, timeArray, styles }) => {
               {trainings
                 .filter((el) => el.time === timeEl)
                 .map(({ id, link, name }) => (
-                  <Link key={id + day} href={link}>
-                    <a className={styles.trainingBlock}>{name}</a>
+                  <Link key={id + day} href={link} className={styles.trainingBlock}>
+                    {name}
                   </Link>
                 ))}
             </div>

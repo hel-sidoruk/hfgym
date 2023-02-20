@@ -18,8 +18,11 @@ const GroupItem = ({ title, time, days, trainer, to }) => {
         </div>
         <div className={styles.field}>
           <span className={styles.smallText}>Тренер:</span>
-          <Link href={`/trainers${to}`} scroll={false}>
-            <a className={`${styles.text} ${styles.link}`}>{trainer}</a>
+          <Link
+            href={`/trainers${to}`}
+            scroll={false}
+            className={`${styles.text} ${styles.link}`}>
+            {trainer}
           </Link>
         </div>
       </div>

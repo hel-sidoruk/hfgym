@@ -18,7 +18,7 @@ const ClassCard = ({ image, text, styles, to }: Props) => {
           <Image layout="fill" src={image} alt={text} />
         </div>
       )}
-      {to ? <Link href={to}>{text}</Link> : <h3>{text}</h3>}
+      {to ? <Link href={to} legacyBehavior>{text}</Link> : <h3>{text}</h3>}
     </div>
   );
 };

@@ -11,8 +11,8 @@ const ArticlePreview = ({ image, title, descr, id }) => {
       <div className={styles.bottom}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.descr}>{descr}</p>
-        <Link href={`/blog/${id}`}>
-          <a className={`${styles.button} btn`}>Читать полностью</a>
+        <Link href={`/blog/${id}`} className={`${styles.button} btn`}>
+          Читать полностью
         </Link>
       </div>
     </article>

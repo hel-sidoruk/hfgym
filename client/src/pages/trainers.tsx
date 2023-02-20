@@ -22,11 +22,11 @@ export default function TrainersPage() {
         <Title variant={'trainers-title'}>Наши тренеры</Title>
         {/* <TrainersList trainers={trainers} styles={styles} /> */}
         <div className={styles.btns}>
-          <Link href="/schedule">
-            <a className={`btn ${styles.btn}`}>Открыть расписание</a>
+          <Link href="/schedule" className={`btn ${styles.btn}`}>
+            Открыть расписание
           </Link>
-          <Link href="/contacts#form">
-            <a className={`btn ${styles.btn}`}>Записаться на тренировку</a>
+          <Link href="/contacts#form" className={`btn ${styles.btn}`}>
+            Записаться на тренировку
           </Link>
         </div>
       </Section>

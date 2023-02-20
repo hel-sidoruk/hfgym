@@ -21,32 +21,31 @@ const Navbar = () => {
   return (
     <header className={styles.header}>
       <div className={`container ${styles.container}`}>
-        <Link href="/">
-          <a className={styles.logo}>
-            <Image
-              priority={true}
-              layout="fill"
-              src="/images/logo-header.png"
-              alt="HolyFamily logo"
-            />
-            Holy Family Gym
-          </a>
+        <Link href="/" className={styles.logo}>
+
+          <Image
+            priority={true}
+            layout="fill"
+            src="/images/logo-header.png"
+            alt="HolyFamily logo"
+          />Holy Family Gym
         </Link>
         <nav
           onClick={() => setActive(false)}
           className={`${styles.nav} ${active ? styles.navActive : ''}`}
         >
           {navigationRoutes.map(({ id, to, text }) => (
-            <Link key={id} href={to}>
-              <a
-                onClick={closeMenu}
-                className={`${styles.link} ${
-                  pathname === to ? styles.disabledLink : ''
-                }`}
-              >
-                {text}
-              </a>
-            </Link>
+            (<Link
+              key={id}
+              href={to}
+              onClick={closeMenu}
+              className={`${styles.link} ${
+                pathname === to ? styles.disabledLink : ''
+              }`}>
+
+              {text}
+
+            </Link>)
           ))}
         </nav>
         <Burger active={active} openMenu={openMenu} />

@@ -54,8 +54,8 @@ const News = ({ news }) => {
           Вперед
         </button>
       </div>
-      <Link href="/blog">
-        <a className={`btn btn-arrow ${styles.btn}`}>Перейти в блог</a>
+      <Link href="/blog" className={`btn btn-arrow ${styles.btn}`}>
+        Перейти в блог
       </Link>
     </Section>
   );
