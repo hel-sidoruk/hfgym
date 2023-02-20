@@ -1,4 +1,4 @@
-import Image from 'next/future/image';
+import Image from "next/image";
 import { useInView } from 'react-intersection-observer';
 
 const ImageAnimated = ({ src, className, alt, wrapClass, priority }) => {
