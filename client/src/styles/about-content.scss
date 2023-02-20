@@ -1,0 +1,231 @@
+.about-content {
+  padding: 100px 0;
+  .title {
+    margin-bottom: 50px;
+  }
+  &__block {
+    position: relative;
+    padding: 15px 0;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 50%;
+      border-radius: 0 5px 5px 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 80%;
+      box-shadow: 4px 4px 8px 6px rgba(#000, 0.5);
+      transition: all 1s ease-in-out;
+    }
+    &.image-anim-0 {
+      &::after {
+        opacity: 0;
+      }
+    }
+    &.image-anim-1 {
+      &::after {
+        opacity: 1;
+      }
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 80px;
+      grid-row-gap: 30px;
+    }
+    &.top {
+      &::after {
+        top: 27%;
+        background-image: url('../assets/about/medals.webp');
+        height: 70%;
+      }
+      .text {
+        &:last-child {
+          grid-column-start: 2;
+          &.anim-0 {
+            transform: translateX(50px);
+          }
+        }
+        &:nth-child(2) {
+          transition-delay: .5s;
+          &.anim-0 {
+            transform: translateX(50px);
+          }
+        }
+      }
+    }
+    &.middle {
+      .text{
+        grid-column-start: 1;
+        &:last-child {
+          grid-column: span 2;
+        }
+      }
+      &::after {
+        top: 30px;
+        right: 0;
+        left: 50%;
+        background-image: url('../assets/about/column.webp');
+        border-radius: 5px 0 0 5px;
+      }
+    }
+    &.bottom {
+      .text{
+        grid-column-start: 2;
+        &.anim-0 {
+          transform: translateX(50px);
+        }
+        &:last-child {
+          grid-column-start: 1;
+          text-align: center;
+          font-size: 22px;
+          grid-column: span 2;
+          margin-top: 20px;
+          transition-delay: .5s;
+          &.anim-0 {
+            transform: translateX(0) translateY(30px);
+          }
+        }
+      }
+      &::after {
+        top: 40px;
+        background-image: url('../assets/about/armbar.webp');
+      }
+    }
+  }
+}
+@media (max-width: 1280px) {
+  .about-content__block.bottom .text:last-child {
+    font-size: 18px;
+  }
+  .about-content {
+    padding: 70px 0;
+  }
+}
+@media (max-width: 1024px) {
+  .about-content {
+    padding: 60px 0;
+    .title {
+      margin-bottom: 32px;
+    }
+    &__block {
+      padding: 0;
+      .container {
+        grid-row-gap: 20px;
+        grid-column-gap: 50px;
+      }
+      &::after, &.top::after {
+        height: 50%;
+      }
+      &.bottom .text:nth-child(2),
+      &.middle .text:nth-child(3),
+      &.middle .text:nth-child(4) {
+        grid-column: span 2;
+      }
+      &.middle .text:last-child {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+@media (max-width: 900px) {
+  .about-content {
+    &__block {
+      .container {
+        grid-row-gap: 15px;
+        grid-column-gap: 30px;
+      }
+      &.top {
+        .text:last-child {
+          margin-bottom: 15px;
+          grid-column: span 2;
+        }
+        &::after {
+          top: 30%;
+          height: 36%;
+        }
+      }
+      &.middle::after {
+        top: 8px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .about-content {
+    &__block {
+      .container {
+        padding: 0 20px;
+      }
+      &.bottom .text:last-child {
+        font-size: 16px;
+      }
+      &.middle::after {
+        height: 40%;
+        top: -8px;
+      }
+      &.bottom::after {
+        top: 10%;
+        height: 40%;
+      }
+      &.middle .text:nth-child(2) {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  .about-content__block.bottom .text:last-child {
+    margin: 10px 0;
+  }
+  .about-content {
+    .title {
+      margin-bottom: 15px;
+    }
+    .container {
+      grid-row-gap: 20px;
+      padding: 0 12px;
+    }
+    &__block {
+      .text {
+        grid-column: span 2;
+      }
+      &.middle .text:first-child {
+        grid-column-end: 3;
+      }
+      &.bottom .text:first-child {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+      &.top {
+        margin-bottom: 260px;
+        &::after {
+          top: 100%;
+          right: 0;
+          border-radius: unset;
+          height: 250px;
+        }
+      }
+      &.middle {
+        margin-bottom: 300px;
+        &::after {
+          top: 100%;
+          left: 0;
+          border-radius: unset;
+          height: 290px;
+        }
+      }
+      &.bottom {
+        margin-bottom: 260px;
+        &::after {
+          top: 100%;
+          right: 0;
+          border-radius: unset;
+          height: 250px;
+        }
+      }
+    }
+  }
+}

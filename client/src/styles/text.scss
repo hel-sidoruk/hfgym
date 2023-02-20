@@ -1,0 +1,94 @@
+.title {
+  letter-spacing: 1px;
+  font-size: 36px;
+  line-height: 46px;
+  text-transform: uppercase;
+  color: #fbfbfb;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 40px;
+  transition: all .7s ease-in-out;
+  &.black {
+    color: #111;
+    text-shadow: none;
+  }
+  &.align-center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &.w-65 {
+    width: 65%;
+    @media (max-width: 1280px) {
+      width: unset;
+    }
+  }
+  &.trainers-title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+.subtitle {
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 15px;
+  color: white;
+  transition: all .6s ease-in-out;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+.text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 36px;
+  color: #fbfbfb;
+  transition: all .7s ease-in-out;
+  &.space {
+    letter-spacing: 1px;
+    line-height: 38px;
+    text-indent: 40px;
+  }
+  &.fz-20 {
+    font-size: 20px;
+    line-height: 36px;
+    b {
+      text-transform: uppercase;
+    }
+    @media (max-width:900px) {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .title {
+    font-size: 32px;
+  }
+  .text{
+    font-size: 16px;
+    line-height: 30px;
+  }
+  .text.space {
+    line-height: 32px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 28px;
+    margin-bottom: 25px;
+    line-height: 36px;
+  }
+  .text {
+    line-height: 28px;
+  }
+  .text.space {
+    line-height: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    line-height: 32px;
+  }
+}

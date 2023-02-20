@@ -1,0 +1,142 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 15px;
+  img {
+    transition: all .3s ease-in-out;
+    object-fit: cover;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(#000, 0.6);
+    transition: all .3s ease-in-out;
+  }
+  h3, a {
+    font-size: 28px;
+    z-index: 2;
+    font-weight: 400;
+    line-height: 36px;
+    max-width: calc(100% - 30px);
+    text-align: center;
+    color: #fff;
+    transition: all .3s ease-in-out;
+  }
+  a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  &:hover {
+    box-shadow: 3px 3px 6px 4px rgba(#a2a2a2, 0.4);
+    &::after {
+      opacity: 0;
+    }
+    img {
+      transform: scale(1.15);
+    }
+    h3, a {
+      text-shadow: 6px 6px 4px rgba(0, 0, 0, 0.7);
+    }
+  }
+  @media (max-width: 768px) {
+    height: 190px;
+    h3, a {
+      font-size: 24px;
+    }
+  }
+  @media (max-width: 576px) {
+    h3, a {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+}
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  height: 250px;
+  width: 100%;
+}
+.noImage {
+  box-shadow: none;
+  width: unset;
+  height: unset;
+  grid-column: span 5;
+  align-self: start;
+  padding: 20px 10px;
+  padding-bottom: 0;
+  pointer-events: none;
+  justify-self: start;
+  &::after {
+    content: unset;
+  }
+  h3 {
+    font-size: 24px;
+    line-height: 32px;
+    max-width: unset;
+  }
+  @media (max-width: 1280px) {
+    grid-column: span 3;
+  }
+  @media (max-width: 768px) {
+    grid-column: span 2;
+    h3 {
+      font-size: 20px;
+    }
+  }
+  @media (max-width: 576px) {
+  }
+}
+.box {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  @media (max-width: 1280px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.openSchedule {
+  grid-column: span 2;
+  justify-self:center;
+  align-self: center;
+  @media (max-width: 1280px) {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    justify-self: end;
+    margin-top: 20px;
+  }
+  @media (max-width: 768px) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  @media (max-width: 576px) {
+    .open-schedule {
+      font-size: 16px;
+      line-height: 20px;
+      padding: 12px 22px;
+      padding-right: 56px;
+      &::after {
+        right: 20px;
+      }
+    }
+  }
+}

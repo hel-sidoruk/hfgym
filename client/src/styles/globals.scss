@@ -1,0 +1,164 @@
+@import './fonts';
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family:"OpenSans", sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+  background-color: #1F1A1A;
+}
+#__next {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h1,h2,h3,h4,h5,p {
+  margin: 0;
+}
+input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+button {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 1360px;
+  padding: 0 40px;
+  margin: 0 auto;
+  @media (max-width:768px) {
+    padding: 0 15px;
+  }
+}
+.section-offset {
+  padding: 70px 0;
+  @media (max-width:1024px) {
+    padding: 60px 0;
+  }
+  &.disciplines {
+    padding-top: 200px;
+    @media (max-width: 1024px) {
+      padding-top: 180px;
+    }
+    @media (max-width: 768px) {
+      padding-top: 150px;
+    }
+  }
+  &.trainers {
+    padding: 150px 0;
+    background-color: rgba(#000, 0.6);
+    @media (max-width: 768px) {
+      padding-top: 110px;
+      padding-bottom: 50px;
+    }
+  }
+  &.sign-up {
+    background-color: rgba(#573131, 0.7);
+    padding: 30px 0;
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &.news {
+    .container {
+      position: relative;
+    }
+  }
+}
+.swiper {
+  height: 100%;
+}
+@import './buttons';
+@import './text';
+@import './about-content';
+.discipline-info {
+  padding-top: 50px;
+  .title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .text:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .text.right.anim-0 {
+    transform: translateX(100px);
+  }
+}
+.opacity-0 {
+  opacity: 0;
+}
+.opacity-1 {
+  opacity: 1;
+}
+.anim-0 {
+  transform: translateX(-100px);
+}
+.anim-1 {
+  transform: translateX(0);
+}
+[class*="ground-pane"] {
+  filter: grayscale(0.4);
+}
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  z-index: -3;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  &.home-page {
+    background-image: url('../assets/backgrounds/home-back.webp');
+  }
+  &.about-page {
+    background-image: url('../assets/backgrounds/about-back3.webp');
+  }
+  &.blog-page {
+    background-image: url('../assets/backgrounds/articles-back.webp');
+  }
+  &.trains-page {
+    background-image: url('../assets/backgrounds/hall.webp');
+    filter: blur(3px) brightness(0.6);
+  }
+  &.trainers-page {
+    background-image: url('../assets/backgrounds/trainers-back.webp');
+    filter: blur(1px) brightness(0.7);
+    background-position: right;
+  }
+  &.contacts-page {
+    background-image: url('../assets/backgrounds/big-logo.webp');
+    filter: blur(2px) brightness(0.6);
+  }
+}
