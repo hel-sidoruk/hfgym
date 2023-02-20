@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useRef } from 'react';
-import RegistrationForm from '../components/RegistrationForm';
+// import RegistrationForm from '../components/RegistrationForm';
 import Background from '../components/UI/Background';
 import MapBlock from '../components/UI/MapBlock';
 import Section from '../components/UI/Section';
@@ -10,10 +10,10 @@ import Title from '../components/UI/Title';
 import styles from '../styles/contacts.module.scss';
 
 export default function ContactsPage() {
-  const mapRef = useRef();
+  const mapRef = useRef<HTMLSpanElement>(null);
   const handleClick = () => {
     window.scrollTo({
-      top: mapRef.current.offsetTop,
+      top: mapRef.current?.offsetTop,
       behavior: 'smooth',
     });
   };
@@ -76,13 +76,11 @@ export default function ContactsPage() {
           </a>
         </div>
         <div className={styles.block}>
-          <Text variant={styles.textBig}>
-            Мы выдаем всю необходимую экипировку для занятий
-          </Text>
+          <Text variant={styles.textBig}>Мы выдаем всю необходимую экипировку для занятий</Text>
         </div>
       </Section>
       <span className={styles.hidden} id="form" aria-hidden="true"></span>
-      <RegistrationForm />
+      {/* <RegistrationForm /> */}
       <span className={styles.hidden} ref={mapRef} aria-hidden={true}></span>
       <MapBlock mapWidth={'100%'} mapHeight={'400px'} />
     </>

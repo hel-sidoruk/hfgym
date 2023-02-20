@@ -54,16 +54,13 @@ export default function BlogPage({ posts, currentPage, limit, pageCount }) {
           ) : (
             <Articles posts={posts} />
           )}
-          <Pagination
-            pagesArray={pagesArray}
-            page={currentPage}
-            changePage={changePage}
-          />
+          <Pagination pagesArray={pagesArray} page={currentPage} changePage={changePage} />
         </div>
       </Section>
     </>
   );
 }
+
 BlogPage.getInitialProps = async ({ query }) => {
   const page = query.page || 1;
   const { data } = await axios.get(

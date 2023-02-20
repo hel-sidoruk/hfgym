@@ -49,22 +49,14 @@ const RegistrationForm = ({ signRef }) => {
       <Subtitle variant={styles.title}>
         Запишитесь на первую бесплатную тренировку, заполнив форму на сайте
       </Subtitle>
-      <form
-        ref={signRef}
-        className={styles.form}
-        onSubmit={handleSubmit(onSubmit)}
-      >
+      <form ref={signRef} className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.field}>
           <Input label="name" register={register} error={errors.name} />
-          {errors.name && (
-            <p className={`text ${styles.error}`}>{errors.name.message}</p>
-          )}
+          {errors.name && <p className={`text ${styles.error}`}>{errors.name.message}</p>}
         </div>
         <div className={styles.field}>
           <Input label="mail" register={register} error={errors.mail} />
-          {errors.mail && (
-            <p className={`text ${styles.error}`}>{errors.mail.message}</p>
-          )}
+          {errors.mail && <p className={`text ${styles.error}`}>{errors.mail.message}</p>}
         </div>
         <div className={styles.field}>
           <label onClick={() => setDayActive(true)}>День недели *</label>
@@ -76,14 +68,7 @@ const RegistrationForm = ({ signRef }) => {
             setState={setDay}
             initialText={'Выберите день недели'}
             error={dayError}
-            values={[
-              'Понедельник',
-              'Вторник',
-              'Среда',
-              'Четверг',
-              'Пятница',
-              'Суббота',
-            ]}
+            values={['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота']}
           />
           <p className={`text ${styles.error}`}>{dayError}</p>
         </div>
@@ -101,11 +86,7 @@ const RegistrationForm = ({ signRef }) => {
           />
           <p className={`text ${styles.error}`}>{disciplineError}</p>
         </div>
-        <button
-          onClick={handleSubmit}
-          type="submit"
-          className={`btn btn-fill ${styles.btn}`}
-        >
+        <button onClick={handleSubmit} type="submit" className={`btn btn-fill ${styles.btn}`}>
           Отправить
         </button>
       </form>

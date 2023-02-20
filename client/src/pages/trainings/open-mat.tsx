@@ -3,7 +3,7 @@ import Discipline from '../../components/Discipline';
 import OpenMat from '../../components/OpenMat';
 import Background from '../../components/UI/Background';
 import ButtonBack from '../../components/UI/ButtonBack';
-import ImageAnimated from '../../components/UI/ImageAnimated';
+// import ImageAnimated from '../../components/UI/ImageAnimated';
 import styles from '../../styles/discipline.module.scss';
 
 const OpenMatPage = () => {
@@ -21,11 +21,11 @@ const OpenMatPage = () => {
       <Discipline title="Открытый ковер">
         <OpenMat styles={styles} />
       </Discipline>
-      <ImageAnimated
+      {/* <ImageAnimated
         src={'/images/disciplines/grappling6.webp'}
         className={`${styles.image} ${styles.imageLeft} ${styles.noRadius}`}
         alt={'Открытый ковер'}
-      />
+      /> */}
     </>
   );
 };

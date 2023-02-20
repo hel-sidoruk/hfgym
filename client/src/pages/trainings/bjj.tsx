@@ -3,7 +3,7 @@ import Bjj from '../../components/Bjj';
 import Discipline from '../../components/Discipline';
 import Background from '../../components/UI/Background';
 import ButtonBack from '../../components/UI/ButtonBack';
-import ImageAnimated from '../../components/UI/ImageAnimated';
+// import ImageAnimated from '../../components/UI/ImageAnimated';
 import styles from '../../styles/discipline.module.scss';
 
 const BjjPage = () => {
@@ -21,11 +21,11 @@ const BjjPage = () => {
       <Discipline title="Бразильское джиу-джитсу">
         <Bjj styles={styles} />
       </Discipline>
-      <ImageAnimated
+      {/* <ImageAnimated
         src={'/images/disciplines/bjj8.webp'}
         className={`${styles.image} ${styles.imageLeft} ${styles.noRadius}`}
         alt={'Бразильское джиу-джитсу'}
-      />
+      /> */}
     </>
   );
 };
