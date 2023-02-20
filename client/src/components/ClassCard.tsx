@@ -1,7 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const ClassCard = ({ image, text, styles, to }) => {
+interface Props {
+  text: string;
+  styles: {
+    readonly [key: string]: string;
+  };
+  image?: string;
+  to?: string;
+}
+
+const ClassCard = ({ image, text, styles, to }: Props) => {
   return (
     <div className={`${styles.card} ${!image ? styles.noImage : ''}`}>
       {image && (
@@ -9,13 +18,7 @@ const ClassCard = ({ image, text, styles, to }) => {
           <Image layout="fill" src={image} alt={text} />
         </div>
       )}
-      {to ? (
-        <Link href={to}>
-          <a>{text}</a>
-        </Link>
-      ) : (
-        <h3>{text}</h3>
-      )}
+      {to ? <Link href={to}>{text}</Link> : <h3>{text}</h3>}
     </div>
   );
 };

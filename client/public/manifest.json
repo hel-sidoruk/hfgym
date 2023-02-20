@@ -1,0 +1,21 @@
+{
+  "name": "Holy Family Gym | Зал единоборств в Минске",
+  "short_name": "Holy Family Gym",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#1F1A1A",
+  "theme_color": "#1F1A1A",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "type": "image/png",
+      "sizes": "100x100"
+    },
+    {
+      "src": "/maskable_icon.png",
+      "sizes": "100x100",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

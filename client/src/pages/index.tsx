@@ -6,10 +6,10 @@ import Hero from '../components/Hero';
 import SignUp from '../components/SignUp';
 import Background from '../components/UI/Background';
 // import News from '../components/News';
-import ContactsHome from '../components/ContactsHome';
+import RegistrationForm from '../components/RegistrationForm';
 
 export default function Home() {
-  const signRef = useRef();
+  // const signRef = useRef<>();
 
   return (
     <>
@@ -24,9 +24,9 @@ export default function Home() {
       <Hero home={true} />
       <AboutHome />
       <Classes />
-      <SignUp signRef={signRef} />
+      {/* <SignUp signRef={signRef} /> */}
       {/* <News news={news} /> */}
-      <ContactsHome signRef={signRef} />
+      {/* <RegistrationForm signRef={signRef} /> */}
     </>
   );
 }

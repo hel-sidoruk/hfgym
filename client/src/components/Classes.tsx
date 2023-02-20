@@ -14,21 +14,13 @@ const Classes = () => {
       <div className={styles.box}>
         {cardsContent.map(({ id, to, image, text }) =>
           image ? (
-            <ClassCard
-              key={id}
-              to={to}
-              styles={styles}
-              image={image}
-              text={text}
-            />
+            <ClassCard key={id} to={to} styles={styles} image={image} text={text} />
           ) : (
             <ClassCard styles={styles} key={id} text={text} />
           )
         )}
         <Link href="/schedule">
-          <a className={`${styles.openSchedule} btn btn-fill btn-arrow`}>
-            Pасписание
-          </a>
+          <a className={`${styles.openSchedule} btn btn-fill btn-arrow`}>Pасписание</a>
         </Link>
       </div>
     </Section>

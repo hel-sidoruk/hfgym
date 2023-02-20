@@ -9,6 +9,7 @@ const SignUp = ({ signRef }) => {
       behavior: 'smooth',
     });
   };
+
   return (
     <Section sectionName={'sign-up'}>
       <div className={styles.content}>

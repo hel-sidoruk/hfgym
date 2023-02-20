@@ -150,15 +150,12 @@ ul {
   }
   &.trains-page {
     background-image: url('../assets/backgrounds/hall.webp');
-    filter: blur(3px) brightness(0.6);
   }
   &.trainers-page {
     background-image: url('../assets/backgrounds/trainers-back.webp');
-    filter: blur(1px) brightness(0.7);
     background-position: right;
   }
   &.contacts-page {
     background-image: url('../assets/backgrounds/big-logo.webp');
-    filter: blur(2px) brightness(0.6);
   }
 }
