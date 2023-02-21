@@ -25,7 +25,7 @@ export const FormSuccess = ({ info, day, onClose }: Props) => {
           stroke="white"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M2 1.5L18 19M18.5 1.5L1.5 19" stroke-width="2" />
+          <path d="M2 1.5L18 19M18.5 1.5L1.5 19" strokeWidth="2" />
         </svg>
 
         <Subtitle>Спасибо за вашу заявку!</Subtitle>

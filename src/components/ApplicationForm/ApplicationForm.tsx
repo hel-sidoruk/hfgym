@@ -1,61 +1,40 @@
+import { useApplicationForm } from '@/hooks/useApplicationForm';
+import { useApplicationSubmit } from '@/hooks/useApplicationSubmit';
 import { disciplinesByDay } from '@/utils/disciplines';
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Loader } from '../UI/Loader';
 import Section from '../UI/Section';
 import Subtitle from '../UI/Subtitle';
 import Dropdown from './Dropdown';
 import { FormSuccess } from './FormSuccess';
+import { InputField } from './InputField';
 
 export const ApplicationForm = () => {
-  const [day, setDay] = useState('');
+  const [
+    values,
+    errors,
+    setName,
+    setEmail,
+    setDay,
+    setDiscipline,
+    setNameError,
+    setEmailError,
+    checkValues,
+  ] = useApplicationForm();
   const [dayActive, setDayActive] = useState(false);
-  const [discipline, setDiscipline] = useState('');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
   const [disciplineActive, setDisciplineActive] = useState(false);
-  const [errors, setErrors] = useState({
-    nameError: '',
-    emailError: '',
-    dayError: '',
-    disciplineError: '',
-  });
-  const [success, setSuccess] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    if (day) setErrors((state) => ({ ...state, dayError: '' }));
-    if (discipline) setErrors((state) => ({ ...state, disciplineError: '' }));
-  }, [day, discipline]);
+  const [sendApplication, resetSuccess, success, isLoading] = useApplicationSubmit();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!name) return setErrors((state) => ({ ...state, nameError: 'Вы не ввели имя' }));
-    if (name.length < 2)
-      return setErrors((state) => ({
-        ...state,
-        nameError: 'Имя не может быть короче двух символов',
-      }));
-    if (!email) return setErrors((state) => ({ ...state, emailError: 'Вы не ввели e-mail' }));
-    if (
-      !email.match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      )
-    )
-      return setErrors((state) => ({ ...state, emailError: 'Некорректный email' }));
-    if (!day) return setErrors((state) => ({ ...state, dayError: 'Выберите день недели' }));
-    if (!discipline)
-      return setErrors((state) => ({ ...state, disciplineError: 'Выберите тренировку' }));
-    setIsLoading(true);
-    axios
-      .post('api/application', { name, email, day, discipline })
-      .then(({ data }) => data.success && setSuccess(true))
-      .finally(() => setIsLoading(false));
+    const error = checkValues();
+    if (error) return;
+    sendApplication(values);
   };
 
   const handleDayClick = () => {
     setDisciplineActive(false);
-    discipline && setDiscipline('');
+    values.discipline && setDiscipline('');
   };
 
   const reset = () => {
@@ -63,7 +42,7 @@ export const ApplicationForm = () => {
     setDay('');
     setName('');
     setEmail('');
-    setSuccess(false);
+    resetSuccess();
   };
 
   const handleDisciplineClick = () => setDayActive(false);
@@ -71,7 +50,7 @@ export const ApplicationForm = () => {
   return (
     <Section sectionName="form__box">
       {success ? (
-        <FormSuccess onClose={reset} info={discipline} day={day} />
+        <FormSuccess onClose={reset} info={values.discipline} day={values.day} />
       ) : (
         <Subtitle variant="form__title">
           Запишитесь на первую бесплатную тренировку, заполнив форму на сайте
@@ -83,41 +62,31 @@ export const ApplicationForm = () => {
         </div>
       )}
       <form className={`form ${success ? 'hidden' : ''}`} onSubmit={handleSubmit}>
-        <div className="form__field">
-          <label htmlFor="name">Имя *</label>
-          <input
-            id="name"
-            className={`form__input ${errors.nameError ? 'form__input-error' : ''}`}
-            placeholder="Введите Ваше имя"
-            value={name}
-            onChange={(e) => {
-              if (errors.nameError) setErrors((state) => ({ ...state, nameError: '' }));
-              setName(e.target.value);
-            }}
-          />
-          {errors.nameError && <p className="text form__error">{errors.nameError}</p>}
-        </div>
-        <div className="form__field">
-          <label htmlFor="mail">E-mail *</label>
-          <input
-            id="mail"
-            className={`form__input ${errors.emailError ? 'form__input-error' : ''}`}
-            placeholder="Введите Ваш E-mail"
-            value={email}
-            onChange={(e) => {
-              if (errors.emailError) setErrors((state) => ({ ...state, emailError: '' }));
-              setEmail(e.target.value);
-            }}
-          />
-          {errors.emailError && <p className="text form__error">{errors.emailError}</p>}
-        </div>
+        <InputField
+          label="name"
+          error={errors.nameError}
+          value={values.name}
+          setValue={(str: string) => {
+            if (errors.nameError) setNameError('');
+            setName(str);
+          }}
+        />
+        <InputField
+          label="email"
+          error={errors.emailError}
+          value={values.email}
+          setValue={(str: string) => {
+            if (errors.emailError) setEmailError('');
+            setEmail(str);
+          }}
+        />
         <div className="form__field">
           <label>День недели *</label>
           <Dropdown
             onClick={handleDayClick}
             active={dayActive}
             setActive={(value: boolean) => setDayActive(value)}
-            state={day}
+            state={values.day}
             setState={(value: string) => setDay(value)}
             text="Выберите день недели"
             error={errors.dayError}
@@ -131,11 +100,11 @@ export const ApplicationForm = () => {
             onClick={handleDisciplineClick}
             active={disciplineActive}
             setActive={(value: boolean) => setDisciplineActive(value)}
-            state={discipline}
+            state={values.discipline}
             error={errors.disciplineError}
             setState={(value: string) => setDiscipline(value)}
             text="Выберите тренировку"
-            values={disciplinesByDay[day] ? disciplinesByDay[day] : []}
+            values={disciplinesByDay[values.day] ? disciplinesByDay[values.day] : []}
           />
           <p className="text form__error">{errors.disciplineError}</p>
         </div>
