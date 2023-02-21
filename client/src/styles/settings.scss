@@ -1,0 +1,78 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+@mixin scrollBar($width) {
+  &::-webkit-scrollbar {
+    width: $width;
+    background: #515151;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #442a2a;
+    &:hover {
+      background: #7d4747;
+    }
+  }
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family:"OpenSans", sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+  background-color: #1F1A1A;
+  @include scrollBar(14px);
+}
+#__next {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h1,h2,h3,h4,h5,p {
+  margin: 0;
+}
+input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+button {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 1360px;
+  padding: 0 40px;
+  margin: 0 auto;
+  @media (max-width:768px) {
+    padding: 0 15px;
+  }
+}
+.swiper {
+  height: 100%;
+}

@@ -1,0 +1,38 @@
+.news {
+  &__content {
+    margin: 0 100px 50px !important;
+    @media (max-width: 1280px) {
+      margin: 0 65px 50px !important;
+    }
+    @media (max-width: 1024px) {
+      margin: 0 0 20px !important;
+    }
+  }
+  &__btn {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+  }
+  &__navBtns {
+    @media (max-width: 1024px) {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+  }
+  &__navBtn {
+    @media (max-width: 1024px) {
+      position: initial;
+      transform: none;
+      &:active {
+        transform: scale(0.95);
+      }
+      &:last-child {
+        transform: rotate(180deg);
+        &:active {
+          transform: scale(0.95) rotate(180deg);
+        }
+      }
+    }
+  }
+}
