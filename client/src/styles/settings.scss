@@ -6,6 +6,21 @@ html {
 *::after {
   box-sizing: border-box;
 }
+@mixin scrollBar($width) {
+  &::-webkit-scrollbar {
+    width: $width;
+    background: #515151;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #442a2a;
+    &:hover {
+      background: #7d4747;
+    }
+  }
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -13,6 +28,7 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   background-color: #1F1A1A;
+  @include scrollBar(14px);
 }
 #__next {
   min-height: 100vh;

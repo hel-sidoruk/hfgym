@@ -12,7 +12,11 @@ export default function BlogPage() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/articles').then(({ data }) => setPosts(data));
+    setLoading(true);
+    axios
+      .get('/api/articles')
+      .then(({ data }) => setPosts(data))
+      .finally(() => setLoading(false));
   }, []);
 
   return (

@@ -1,6 +1,6 @@
+import { ApplicationForm } from '@/components/ApplicationForm';
 import Head from 'next/head';
 import { useRef } from 'react';
-// import RegistrationForm from '../components/RegistrationForm';
 import Background from '../components/UI/Background';
 import MapBlock from '../components/UI/MapBlock';
 import Section from '../components/UI/Section';
@@ -79,7 +79,7 @@ export default function ContactsPage() {
         </div>
       </Section>
       <span className="contacts__hidden" id="form" aria-hidden="true"></span>
-      {/* <RegistrationForm /> */}
+      <ApplicationForm />
       <span className="contacts__hidden" ref={mapRef} aria-hidden={true}></span>
       <MapBlock mapWidth={'100%'} mapHeight={'400px'} />
     </>

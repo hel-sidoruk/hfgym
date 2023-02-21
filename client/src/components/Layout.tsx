@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Footer from './Footer';
-import Navbar from './Navbar';
+import { Header } from './Header';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
+      <Header />
       <main>{children}</main>
       <Footer />
     </>

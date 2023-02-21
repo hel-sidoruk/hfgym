@@ -1,20 +1,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from '../styles/footer.module.scss';
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <div className={`container ${styles.container}`}>
-        <Link href="/" className={styles.logo}>
+    <footer className="footer">
+      <div className="container footer__container">
+        <Link href="/" className="footer__logo">
           <Image src="/images/logo-footer.png" alt="HolyFamily logo" fill sizes="100vw" />
         </Link>
-        <div className={styles.info}>
-          <p className={styles.text}>Мы в социальных сетях:</p>
-          <div className={styles.social}>
+        <div className="footer__info">
+          <p className="footer__text">Мы в социальных сетях:</p>
+          <div className="footer__social">
             <a
               target="_blank"
-              className={styles.socialLink}
+              className="footer__socialLink"
               href="https://vk.com/bjj_holyfamilygym"
               rel="noreferrer"
             >
@@ -22,7 +21,7 @@ const Footer = () => {
             </a>
             <a
               target="_blank"
-              className={styles.socialLink}
+              className="footer__socialLink"
               href="https://www.instagram.com/holyfamilygym/"
               rel="noreferrer"
             >
@@ -30,17 +29,17 @@ const Footer = () => {
             </a>
             <a
               target="_blank"
-              className={styles.socialLink}
+              className="footer__socialLink"
               href="https://facebook.com/HolyFamilyGym/"
               rel="noreferrer"
             >
               <Image src="/icons/fb.svg" alt="facebook icon" fill sizes="100vw" />
             </a>
           </div>
-          <a className={`${styles.text} ${styles.tel}`} href="tel:+375292765915">
+          <a className="footer__text footer__tel" href="tel:+375292765915">
             +375(29) 276-59-15
           </a>
-          <address className={`${styles.text} ${styles.address}`}>
+          <address className="footer__text footer__address">
             г. Минск, ул. Михася Лынькова 19/1
           </address>
         </div>

@@ -1,3 +1,4 @@
+import { PostInterface } from '@/types';
 import axios from 'axios';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -7,13 +8,14 @@ import Background from '../../components/UI/Background';
 import ButtonBack from '../../components/UI/ButtonBack';
 
 const ArticlePage = () => {
-  const [post, setPost] = useState({});
+  const [post, setPost] = useState<PostInterface | null>(null);
   const { query } = useRouter();
 
   useEffect(() => {
     axios.get(`/api/articles/${query.id}`).then(({ data }) => setPost(data[0]));
-  }, []);
+  }, [query.id]);
 
+  if (!post) return <></>;
   return (
     <>
       <Head>

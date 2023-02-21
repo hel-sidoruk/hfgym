@@ -1,18 +1,20 @@
+import { TrainerItem } from '@/components/TrainerItem';
+import { TrainerInterface } from '@/types';
 import axios from 'axios';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import TrainersList from '../components/TrainersList';
 import Background from '../components/UI/Background';
 import Section from '../components/UI/Section';
 import Title from '../components/UI/Title';
 
 export default function TrainersPage() {
-  const [trainers, setTrainers] = useState([]);
+  const [trainers, setTrainers] = useState<TrainerInterface[]>([]);
 
   useEffect(() => {
     axios.get('/api/trainers').then(({ data }) => setTrainers(data));
   }, []);
+
   return (
     <>
       <Head>
@@ -25,7 +27,11 @@ export default function TrainersPage() {
       <Background page={'trainers-page'} />
       <Section sectionName={'trainers'}>
         <Title variant={'trainers-title'}>Наши тренеры</Title>
-        <TrainersList trainers={trainers} />
+        <div>
+          {trainers.map((trainer) => (
+            <TrainerItem key={trainer.id} trainer={trainer} />
+          ))}
+        </div>
         <div className="trainers__btns">
           <Link href="/schedule" className="btn trainers__btn">
             Открыть расписание

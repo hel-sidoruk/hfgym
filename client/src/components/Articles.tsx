@@ -1,10 +1,7 @@
+import { PostInterface } from '@/types';
 import ArticlePreview from './ArticlePreview';
 
-const Articles = ({
-  posts,
-}: {
-  posts: { id: number; image: string; title: string; descr: string }[];
-}) => {
+const Articles = ({ posts }: { posts: PostInterface[] }) => {
   return (
     <>
       {posts.map(({ id, image, title, descr }) => (

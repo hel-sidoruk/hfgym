@@ -3,10 +3,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { navigationRoutes } from '../utils/navigationRoutes';
-import styles from '../styles/header.module.scss';
 import Burger from './UI/Burger';
 
-const Navbar = () => {
+export const Header = () => {
   const { pathname } = useRouter();
   const [active, setActive] = useState(false);
 
@@ -19,9 +18,9 @@ const Navbar = () => {
   };
 
   return (
-    <header className={styles.header}>
-      <div className={`container ${styles.container}`}>
-        <Link href="/" className={styles.logo}>
+    <header className="header">
+      <div className="container header__container">
+        <Link href="/" className="header__logo">
           <Image
             priority={true}
             src="/images/logo-header.png"
@@ -33,14 +32,14 @@ const Navbar = () => {
         </Link>
         <nav
           onClick={() => setActive(false)}
-          className={`${styles.nav} ${active ? styles.navActive : ''}`}
+          className={`header__nav ${active ? 'header__navActive' : ''}`}
         >
           {navigationRoutes.map(({ id, to, text }) => (
             <Link
               key={id}
               href={to}
               onClick={closeMenu}
-              className={`${styles.link} ${pathname === to ? styles.disabledLink : ''}`}
+              className={`header__link ${pathname === to ? 'header__disabledLink' : ''}`}
             >
               {text}
             </Link>
@@ -51,5 +50,3 @@ const Navbar = () => {
     </header>
   );
 };
-
-export default Navbar;

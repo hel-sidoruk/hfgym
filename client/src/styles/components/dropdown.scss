@@ -44,12 +44,7 @@
       background-repeat: no-repeat;
       background-size: 17px 12px;
       transform: translateY(-50%);
-      transition: all .3s ease-in-out;
-    }
-  }
-  &__topActive {
-    &::before {
-      transform: translateY(-50%) rotate(180deg);
+      transition: all .2s ease-in-out;
     }
   }
   &__list {
@@ -57,7 +52,7 @@
     top: 100%;
     left: 0;
     transform-origin: top;
-    transition: all .3s ease-in-out;
+    transition: all .2s ease-in-out;
     transform: scaleY(0);
     z-index: 10;
     width: 100%;
@@ -67,14 +62,12 @@
     font-size: 18px;
     max-height: 200px;
     overflow-y: auto;
-  }
-  &__listActive {
-    transform: scaleY(1);
+    @include scrollBar(10px);
   }
   &__item {
     padding: 15px 20px;
     cursor: pointer;
-    background-color: rgba(#000, 0.8);
+    background-color: rgba(#000, 0.9);
     transition: all .3s ease-in-out;
     color: #fff;
     &:not(:last-child) {
@@ -83,6 +76,14 @@
     &:hover {
       padding-left: 25px;
       background-color: #793a3a;
+    }
+  }
+  &__active {
+    &::before {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    & + .dropdown__list {
+      transform: scaleY(1);
     }
   }
 }
