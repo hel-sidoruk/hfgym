@@ -1,11 +1,9 @@
-import styles from '../../styles/burger.module.scss';
-
 const Burger = ({ active, openMenu }) => {
   return (
-    <div className={styles.burger} onClick={openMenu}>
-      <span className={`${styles.line} ${active ? styles.lineActive : ''}`}></span>
-      <span className={`${styles.line} ${active ? styles.lineActive : ''}`}></span>
-      <span className={`${styles.line} ${active ? styles.lineActive : ''}`}></span>
+    <div className="burger" onClick={openMenu}>
+      <span className={`burger__line ${active ? 'burger__lineActive' : ''}`}></span>
+      <span className={`burger__line ${active ? 'burger__lineActive' : ''}`}></span>
+      <span className={`burger__line ${active ? 'burger__lineActive' : ''}`}></span>
     </div>
   );
 };

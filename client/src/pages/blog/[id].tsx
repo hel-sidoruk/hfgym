@@ -6,29 +6,7 @@ import ArticleItem from '../../components/ArticleItem';
 import Background from '../../components/UI/Background';
 import ButtonBack from '../../components/UI/ButtonBack';
 
-// export async function getStaticPaths() {
-//   const response = await axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/get-articles-paths`);
-//   const paths = response.data.map((id) => ({ params: { id } }));
-//   console.log(paths);
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// }
-
-// export async function getStaticProps({ params }) {
-//   const response = await axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/articles/${params.id}`);
-//   const post = response.data;
-//   console.log(post);
-//   return {
-//     props: {
-//       post,
-//     },
-//   };
-// }
-
 const ArticlePage = () => {
-  // const { title, image, descr, text } = post;
   const [post, setPost] = useState({});
   const { query } = useRouter();
 

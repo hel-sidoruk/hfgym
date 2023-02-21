@@ -3,7 +3,6 @@ import { cardsContent } from '../utils/cards';
 import Title from './UI/Title';
 import Section from './UI/Section';
 import Link from 'next/link';
-import styles from '../styles/classes.module.scss';
 
 const Classes = () => {
   return (
@@ -11,15 +10,15 @@ const Classes = () => {
       <Title variant={'w-65'}>
         В нашем зале проходят тренировки по&nbsp;следующим направлениям:
       </Title>
-      <div className={styles.box}>
+      <div className="classes__box">
         {cardsContent.map(({ id, to, image, text }) =>
           image ? (
-            <ClassCard key={id} to={to} styles={styles} image={image} text={text} />
+            <ClassCard key={id} to={to} image={image} text={text} />
           ) : (
-            <ClassCard styles={styles} key={id} text={text} />
+            <ClassCard key={id} text={text} />
           )
         )}
-        <Link href="/schedule" className={`${styles.openSchedule} btn btn-fill btn-arrow`}>
+        <Link href="/schedule" className="classes__openSchedule btn btn-fill btn-arrow">
           Pасписание
         </Link>
       </div>

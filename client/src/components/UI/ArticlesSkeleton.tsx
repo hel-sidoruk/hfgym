@@ -1,13 +1,13 @@
-const ArticlesSkeleton = ({ styles, num }) => {
+const ArticlesSkeleton = ({ num }: { num: number }) => {
   const arr = [];
   for (let i = 0; i < num; i++) arr.push(i);
   return (
     <>
       {arr.map((el) => (
-        <div key={el} className={`${styles.skelet}`}>
-          <div className={styles.skeletBottom}>
-            <div className={styles.textSkelet}></div>
-            <div className={styles.textSkelet}></div>
+        <div key={el} className="blog__skelet">
+          <div className="blog__skeletBottom">
+            <div className="blog__textSkelet"></div>
+            <div className="blog__textSkelet"></div>
           </div>
         </div>
       ))}

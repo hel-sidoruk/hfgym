@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import styles from '../styles/group.module.scss';
 
 interface Props {
   title: string;
@@ -11,22 +10,26 @@ interface Props {
 
 const GroupItem = ({ title, time, days, trainer, to }: Props) => {
   return (
-    <div className={styles.item}>
-      <div className={styles.top}>
-        <h3 className={styles.title}>{title}</h3>
+    <div className="group-item">
+      <div className="group-item__top">
+        <h3 className="group-item__title">{title}</h3>
       </div>
-      <div className={styles.descr}>
-        <div className={styles.field}>
-          <span className={styles.smallText}>Время:</span>
-          <p className={styles.text}>{time}</p>
+      <div className="group-item__descr">
+        <div className="group-item__field">
+          <span className="group-item__smallText">Время:</span>
+          <p className="group-item__text">{time}</p>
         </div>
-        <div className={styles.field}>
-          <span className={styles.smallText}>Дни:</span>
-          <p className={styles.text}>{days}</p>
+        <div className="group-item__field">
+          <span className="group-item__smallText">Дни:</span>
+          <p className="group-item__text">{days}</p>
         </div>
-        <div className={styles.field}>
-          <span className={styles.smallText}>Тренер:</span>
-          <Link href={`/trainers${to}`} scroll={false} className={`${styles.text} ${styles.link}`}>
+        <div className="group-item__field">
+          <span className="group-item__smallText">Тренер:</span>
+          <Link
+            href={`/trainers${to}`}
+            scroll={false}
+            className="group-item__text group-item__link"
+          >
             {trainer}
           </Link>
         </div>

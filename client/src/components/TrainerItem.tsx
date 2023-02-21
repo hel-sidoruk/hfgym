@@ -4,13 +4,7 @@ import Subtitle from './UI/Subtitle';
 import ImageAnimated from './UI/ImageAnimated';
 import { TrainerInterface } from '@/types';
 
-export const TrainerItem = ({
-  trainer,
-  styles,
-}: {
-  trainer: TrainerInterface;
-  styles: { [key: string]: string };
-}) => {
+export const TrainerItem = ({ trainer }: { trainer: TrainerInterface }) => {
   const textArray = trainer.text.replace(/\r/g, '').split('\n').filter(Boolean);
   const names: { [key: number]: string } = {
     1: 'viktor-nikonov',
@@ -21,25 +15,25 @@ export const TrainerItem = ({
     6: 'evgeniy-akulich',
   };
   return (
-    <div className={styles.item}>
+    <div className="trainers__item">
       <ImageAnimated
-        wrapClass={styles.wrapper}
-        className={styles.image}
+        wrapClass="trainers__wrapper"
+        className="trainers__image"
         src={`/images/trainers/${trainer.image.replace('.jpg', '.webp')}`}
         alt="trainer photo"
       />
-      <div className={styles.info}>
-        <Title variant={styles.title}>{trainer.name}</Title>
-        <Subtitle variant={styles.disciplines}>{trainer.disciplines}</Subtitle>
-        <div className={styles.textBlock}>
+      <div className="trainers__info">
+        <Title variant="trainers__title">{trainer.name}</Title>
+        <Subtitle variant="trainers__disciplines">{trainer.disciplines}</Subtitle>
+        <div className="trainers__textBlock">
           {textArray.map((elem, i) => (
-            <Text variant={styles.text} key={i}>
+            <Text variant="trainers__text" key={i}>
               {elem}
             </Text>
           ))}
         </div>
       </div>
-      <span aria-hidden={true} id={names[trainer.id]} className={styles.hidden}></span>
+      <span aria-hidden={true} id={names[trainer.id]} className="trainers__hidden"></span>
     </div>
   );
 };

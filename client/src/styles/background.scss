@@ -1,0 +1,31 @@
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  z-index: -3;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  &.home-page {
+    background-image: url('../assets/backgrounds/home-back.webp');
+  }
+  &.about-page {
+    background-image: url('../assets/backgrounds/about-back3.webp');
+  }
+  &.blog-page {
+    background-image: url('../assets/backgrounds/articles-back.webp');
+  }
+  &.trains-page {
+    background-image: url('../assets/backgrounds/hall.webp');
+  }
+  &.trainers-page {
+    background-image: url('../assets/backgrounds/trainers-back.webp');
+    background-position: right;
+  }
+  &.contacts-page {
+    background-image: url('../assets/backgrounds/big-logo.webp');
+  }
+}

@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import styles from '../styles/hero.module.scss';
 import HeroSwiper from './HeroSwiper';
 
 const Hero = ({ home }: { home?: boolean }) => {
@@ -11,15 +10,15 @@ const Hero = ({ home }: { home?: boolean }) => {
   };
 
   return home ? (
-    <section className={styles.hero} onClick={handleClick}>
-      <HeroSwiper wrapperClass={styles.swiper} />
-      <div className={`container ${styles.container}`}>
-        <h1 className={styles.title}>Holy family gym</h1>
-        <p className={styles.descr}>Зал единоборств в Минске</p>
+    <section className="hero" onClick={handleClick}>
+      <HeroSwiper wrapperClass="hero__swiper" />
+      <div className="container hero__container">
+        <h1 className="hero__title">Holy family gym</h1>
+        <p className="hero__descr">Зал единоборств в Минске</p>
       </div>
     </section>
   ) : (
-    <section className={styles.about} onClick={handleClick}>
+    <section className="hero__about" onClick={handleClick}>
       <Image
         priority={true}
         src="/images/about-hero.webp"

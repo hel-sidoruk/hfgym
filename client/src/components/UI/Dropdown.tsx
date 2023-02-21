@@ -1,5 +1,3 @@
-import styles from '../../styles/dropdown.module.scss';
-
 interface Props {
   values: string[];
   initialText: string;
@@ -29,20 +27,18 @@ const Dropdown = ({
   return (
     <div
       onClick={onClick}
-      className={`${styles.dropdown} ${!values.length ? styles.disabled : ''} ${
-        error ? styles.error : ''
-      }`}
+      className={`dropdown ${!values.length ? 'disabled' : ''} ${error ? 'error' : ''}`}
     >
       {state ? '' : <span>{initialText}</span>}
       <div
         onClick={() => (active ? setActive(false) : setActive(true))}
-        className={`${styles.top} ${active ? styles.topActive : ''}`}
+        className={`dropdown__top ${active ? 'dropdown__topActive' : ''}`}
       >
         {state}
       </div>
-      <ul className={`${styles.list} ${active ? styles.listActive : ''}`}>
+      <ul className={`dropdown__list ${active ? 'dropdown__listActive' : ''}`}>
         {values.map((el) => (
-          <li key={el} className={styles.item} onClick={() => handleClick(el)}>
+          <li key={el} className="dropdown__item" onClick={() => handleClick(el)}>
             {el}
           </li>
         ))}

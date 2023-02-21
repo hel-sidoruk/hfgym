@@ -8,7 +8,6 @@ import Pagination from '../../components/UI/Pagination';
 import Section from '../../components/UI/Section';
 import Title from '../../components/UI/Title';
 import { getPagesArray } from '../../utils/pages';
-import styles from '../../styles/blog.module.scss';
 import ArticlesSkeleton from '../../components/UI/ArticlesSkeleton';
 
 export default function BlogPage() {
@@ -51,10 +50,10 @@ export default function BlogPage() {
         />
       </Head>
       <Background page={'blog-page'} />
-      <Section sectionName={styles.articles}>
+      <Section sectionName="blog">
         <Title variant={'align-center'}>Блог</Title>
-        <div className={styles.content}>
-          {isLoading ? <ArticlesSkeleton num={6} styles={styles} /> : <Articles posts={posts} />}
+        <div className="blog__content">
+          {isLoading ? <ArticlesSkeleton num={6} /> : <Articles posts={posts} />}
           {/* <Pagination pagesArray={pagesArray} page={currentPage} changePage={changePage} /> */}
         </div>
       </Section>

@@ -1,4 +1,4 @@
-.about-content {
+.about {
   padding: 100px 0;
   .title {
     margin-bottom: 50px;
@@ -38,7 +38,7 @@
     &.top {
       &::after {
         top: 27%;
-        background-image: url('../assets/about/medals.webp');
+        background-image: url('../../assets/about/medals.webp');
         height: 70%;
       }
       .text {
@@ -67,7 +67,7 @@
         top: 30px;
         right: 0;
         left: 50%;
-        background-image: url('../assets/about/column.webp');
+        background-image: url('../../assets/about/column.webp');
         border-radius: 5px 0 0 5px;
       }
     }
@@ -91,21 +91,21 @@
       }
       &::after {
         top: 40px;
-        background-image: url('../assets/about/armbar.webp');
+        background-image: url('../../assets/about/armbar.webp');
       }
     }
   }
 }
 @media (max-width: 1280px) {
-  .about-content__block.bottom .text:last-child {
+  .about__block.bottom .text:last-child {
     font-size: 18px;
   }
-  .about-content {
+  .about {
     padding: 70px 0;
   }
 }
 @media (max-width: 1024px) {
-  .about-content {
+  .about {
     padding: 60px 0;
     .title {
       margin-bottom: 32px;
@@ -131,7 +131,7 @@
   }
 }
 @media (max-width: 900px) {
-  .about-content {
+  .about {
     &__block {
       .container {
         grid-row-gap: 15px;
@@ -154,7 +154,7 @@
   }
 }
 @media (max-width: 768px) {
-  .about-content {
+  .about {
     &__block {
       .container {
         padding: 0 20px;
@@ -177,10 +177,10 @@
   }
 }
 @media (max-width: 576px) {
-  .about-content__block.bottom .text:last-child {
+  .about__block.bottom .text:last-child {
     margin: 10px 0;
   }
-  .about-content {
+  .about {
     .title {
       margin-bottom: 15px;
     }

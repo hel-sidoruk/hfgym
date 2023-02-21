@@ -3,18 +3,15 @@ import Link from 'next/link';
 
 interface Props {
   text: string;
-  styles: {
-    readonly [key: string]: string;
-  };
   image?: string;
   to?: string;
 }
 
-const ClassCard = ({ image, text, styles, to }: Props) => {
+const ClassCard = ({ image, text, to }: Props) => {
   return (
-    <div className={`${styles.card} ${!image ? styles.noImage : ''}`}>
+    <div className={`classes__card ${!image ? 'classes__noImage' : ''}`}>
       {image && (
-        <div className={styles.image}>
+        <div className="classes__image">
           <Image src={image} alt={text} fill sizes="100vw" />
         </div>
       )}
