@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from 'next/image';
 import Link from 'next/link';
 
 interface Props {
@@ -15,10 +15,10 @@ const ClassCard = ({ image, text, styles, to }: Props) => {
     <div className={`${styles.card} ${!image ? styles.noImage : ''}`}>
       {image && (
         <div className={styles.image}>
-          <Image layout="fill" src={image} alt={text} />
+          <Image src={image} alt={text} fill sizes="100vw" />
         </div>
       )}
-      {to ? <Link href={to} legacyBehavior>{text}</Link> : <h3>{text}</h3>}
+      {to ? <Link href={to}>{text}</Link> : <h3>{text}</h3>}
     </div>
   );
 };

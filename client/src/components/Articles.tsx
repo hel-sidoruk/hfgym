@@ -1,6 +1,10 @@
 import ArticlePreview from './ArticlePreview';
 
-const Articles = ({ posts }) => {
+const Articles = ({
+  posts,
+}: {
+  posts: { id: number; image: string; title: string; descr: string }[];
+}) => {
   return (
     <>
       {posts.map(({ id, image, title, descr }) => (
@@ -10,7 +14,6 @@ const Articles = ({ posts }) => {
           title={title}
           descr={descr}
           id={id}
-          home={true}
         />
       ))}
     </>

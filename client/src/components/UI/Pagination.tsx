@@ -20,14 +20,8 @@ export const Pagination = ({ pagesArray, page, changePage }) => {
           {el}
         </button>
       ))}
-      <span className={`${styles.dots} ${page > 3 ? styles.active : ''}`}>
-        ...
-      </span>
-      <span
-        className={`${styles.dots} ${page < lastPage - 2 ? styles.active : ''}`}
-      >
-        ...
-      </span>
+      <span className={`${styles.dots} ${page > 3 ? styles.active : ''}`}>...</span>
+      <span className={`${styles.dots} ${page < lastPage - 2 ? styles.active : ''}`}>...</span>
     </div>
   );
 };

@@ -1,9 +1,9 @@
+import Grappling from '@/components/disciplines/Grappling';
 import Head from 'next/head';
 import Discipline from '../../components/Discipline';
-import Grappling from '../../components/Grappling';
 import Background from '../../components/UI/Background';
 import ButtonBack from '../../components/UI/ButtonBack';
-// import ImageAnimated from '../../components/UI/ImageAnimated';
+import ImageAnimated from '../../components/UI/ImageAnimated';
 import styles from '../../styles/discipline.module.scss';
 
 const GrapplingPage = () => {
@@ -21,11 +21,11 @@ const GrapplingPage = () => {
       <Discipline title="Грэпплинг" centered>
         <Grappling styles={styles} />
       </Discipline>
-      {/* <ImageAnimated
+      <ImageAnimated
         src={'/images/disciplines/grappling1.webp'}
         className={`${styles.image} ${styles.imageLeft} ${styles.noRadius}`}
         alt={'Открытый ковер'}
-      /> */}
+      />
     </>
   );
 };

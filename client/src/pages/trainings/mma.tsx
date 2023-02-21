@@ -1,6 +1,6 @@
+import Mma from '@/components/disciplines/Mma';
 import Head from 'next/head';
 import Discipline from '../../components/Discipline';
-import Mma from '../../components/Mma';
 import Background from '../../components/UI/Background';
 import ButtonBack from '../../components/UI/ButtonBack';
 

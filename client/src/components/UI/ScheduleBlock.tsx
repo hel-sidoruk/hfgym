@@ -3,9 +3,7 @@ import Link from 'next/link';
 const ScheduleBlock = ({ day, trainings, timeArray, styles }) => {
   return (
     <div className={styles.block}>
-      <div className={`${styles.mobileHeader} ${styles.cell} ${styles.head}`}>
-        {day}
-      </div>
+      <div className={`${styles.mobileHeader} ${styles.cell} ${styles.head}`}>{day}</div>
       <ul className={styles.list}>
         {timeArray.map((timeEl) => (
           <li key={timeEl + day} className={styles.item}>

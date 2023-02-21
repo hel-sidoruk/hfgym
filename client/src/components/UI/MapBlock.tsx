@@ -1,8 +1,6 @@
-// import { YMaps, Map, Placemark } from 'react-yandex-maps';
-
 import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps';
 
-export const MapBlock = ({ mapWidth, mapHeight }) => {
+export const MapBlock = ({ mapWidth, mapHeight }: { mapWidth: string; mapHeight: string }) => {
   const mapData = {
     center: [53.92751803192662, 27.49040140069119],
     zoom: 16,

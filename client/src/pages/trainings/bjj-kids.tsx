@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import BjjKids from '../../components/BjjKids';
 import Discipline from '../../components/Discipline';
 import Background from '../../components/UI/Background';
 import ButtonBack from '../../components/UI/ButtonBack';
+import BjjKids from '@/components/disciplines/BjjKids';
 
 const BjjKidsPage = () => {
   return (

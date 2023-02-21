@@ -11,30 +11,35 @@ import { getPagesArray } from '../../utils/pages';
 import styles from '../../styles/blog.module.scss';
 import ArticlesSkeleton from '../../components/UI/ArticlesSkeleton';
 
-export default function BlogPage({ posts, currentPage, limit, pageCount }) {
+export default function BlogPage() {
   const router = useRouter();
   const [isLoading, setLoading] = useState(false);
   const startLoading = () => setLoading(true);
   const stopLoading = () => setLoading(false);
-  const changePage = (page) => {
-    const currentPath = router.pathname;
-    const currentQuery = router.query;
-    currentQuery.page = page;
-    router.push({
-      pathname: currentPath,
-      query: currentQuery,
-    });
-  };
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    router.events.on('routeChangeStart', startLoading);
-    router.events.on('routeChangeComplete', stopLoading);
-    return () => {
-      router.events.off('routeChangeStart', startLoading);
-      router.events.off('routeChangeComplete', stopLoading);
-    };
-  });
-  const pagesArray = getPagesArray(pageCount);
+    axios.get('/api/articles').then(({ data }) => setPosts(data));
+  }, []);
+  // const changePage = (page) => {
+  //   const currentPath = router.pathname;
+  //   const currentQuery = router.query;
+  //   currentQuery.page = page;
+  //   router.push({
+  //     pathname: currentPath,
+  //     query: currentQuery,
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   router.events.on('routeChangeStart', startLoading);
+  //   router.events.on('routeChangeComplete', stopLoading);
+  //   return () => {
+  //     router.events.off('routeChangeStart', startLoading);
+  //     router.events.off('routeChangeComplete', stopLoading);
+  //   };
+  // });
+  // const pagesArray = getPagesArray(pageCount);
 
   return (
     <>
@@ -49,23 +54,10 @@ export default function BlogPage({ posts, currentPage, limit, pageCount }) {
       <Section sectionName={styles.articles}>
         <Title variant={'align-center'}>Блог</Title>
         <div className={styles.content}>
-          {isLoading ? (
-            <ArticlesSkeleton num={limit} styles={styles} />
-          ) : (
-            <Articles posts={posts} />
-          )}
-          <Pagination pagesArray={pagesArray} page={currentPage} changePage={changePage} />
+          {isLoading ? <ArticlesSkeleton num={6} styles={styles} /> : <Articles posts={posts} />}
+          {/* <Pagination pagesArray={pagesArray} page={currentPage} changePage={changePage} /> */}
         </div>
       </Section>
     </>
   );
 }
-
-BlogPage.getInitialProps = async ({ query }) => {
-  const page = query.page || 1;
-  const { data } = await axios.get(
-    `${process.env.NEXT_PUBLIC_HOST}/api/articles?page=${page}&limit=6`
-  );
-  const { posts, pageCount, limit, currentPage } = data;
-  return { posts, pageCount, limit, currentPage };
-};

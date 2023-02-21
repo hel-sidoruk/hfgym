@@ -1,14 +1,22 @@
-import Image from "next/image";
+import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 
-const ImageAnimated = ({ src, className, alt, wrapClass, priority }) => {
+interface Props {
+  src: string;
+  className: string;
+  alt: string;
+  wrapClass?: string;
+  priority?: boolean;
+}
+
+const ImageAnimated = ({ src, className, alt, wrapClass, priority }: Props) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.4,
   });
   return (
     <>
-      <div className={wrapClass} aria-hidden="true" ref={ref}>
+      <div className={wrapClass || ''} aria-hidden="true" ref={ref}>
         <Image
           priority={priority ? priority : false}
           width={500}

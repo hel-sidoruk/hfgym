@@ -1,6 +1,13 @@
+import { ScheduleInterface } from '@/types';
 import ScheduleBlock from './UI/ScheduleBlock';
 
-const ScheduleMobile = ({ schedule, styles }) => {
+const ScheduleMobile = ({
+  schedule,
+  styles,
+}: {
+  schedule: ScheduleInterface[];
+  styles: { [key: string]: string };
+}) => {
   const monWenFr = schedule.filter((el) => el.day.includes('Понедельник'));
   const tueThur = schedule.filter((el) => el.day.includes('Вторник'));
   const saturday = schedule.filter((el) => el.day.includes('Суббота'));
@@ -18,24 +25,9 @@ const ScheduleMobile = ({ schedule, styles }) => {
           trainings={monWenFr}
           timeArray={timeArray1}
         />
-        <ScheduleBlock
-          styles={styles}
-          day={'Вторник'}
-          trainings={tueThur}
-          timeArray={timeArray2}
-        />
-        <ScheduleBlock
-          styles={styles}
-          day={'Среда'}
-          trainings={monWenFr}
-          timeArray={timeArray1}
-        />
-        <ScheduleBlock
-          styles={styles}
-          day={'Четверг'}
-          trainings={tueThur}
-          timeArray={timeArray2}
-        />
+        <ScheduleBlock styles={styles} day={'Вторник'} trainings={tueThur} timeArray={timeArray2} />
+        <ScheduleBlock styles={styles} day={'Среда'} trainings={monWenFr} timeArray={timeArray1} />
+        <ScheduleBlock styles={styles} day={'Четверг'} trainings={tueThur} timeArray={timeArray2} />
         <ScheduleBlock
           styles={styles}
           day={'Пятница'}

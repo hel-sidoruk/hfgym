@@ -5,7 +5,7 @@ import Title from './UI/Title';
 import styles from '../styles/article-page.module.scss';
 import ImageAnimated from './UI/ImageAnimated';
 
-const ArticleItem = ({ image, title, text }) => {
+const ArticleItem = ({ image, title, text }: { image: string; title: string; text: string }) => {
   return (
     <Section sectionName={styles.block}>
       <div className={styles.content}>

@@ -1,7 +1,15 @@
 import Link from 'next/link';
 import styles from '../styles/group.module.scss';
 
-const GroupItem = ({ title, time, days, trainer, to }) => {
+interface Props {
+  title: string;
+  time: string;
+  days: string;
+  trainer: string;
+  to?: string;
+}
+
+const GroupItem = ({ title, time, days, trainer, to }: Props) => {
   return (
     <div className={styles.item}>
       <div className={styles.top}>
@@ -18,10 +26,7 @@ const GroupItem = ({ title, time, days, trainer, to }) => {
         </div>
         <div className={styles.field}>
           <span className={styles.smallText}>Тренер:</span>
-          <Link
-            href={`/trainers${to}`}
-            scroll={false}
-            className={`${styles.text} ${styles.link}`}>
+          <Link href={`/trainers${to}`} scroll={false} className={`${styles.text} ${styles.link}`}>
             {trainer}
           </Link>
         </div>

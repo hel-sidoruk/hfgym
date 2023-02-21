@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from 'next/image';
 import styles from '../styles/hero.module.scss';
 import HeroSwiper from './HeroSwiper';
 
@@ -20,7 +20,13 @@ const Hero = ({ home }: { home?: boolean }) => {
     </section>
   ) : (
     <section className={styles.about} onClick={handleClick}>
-      <Image priority={true} src="/images/about-hero.webp" layout="fill" alt="holy family photo" />
+      <Image
+        priority={true}
+        src="/images/about-hero.webp"
+        alt="holy family photo"
+        fill
+        sizes="100vw"
+      />
     </section>
   );
 };

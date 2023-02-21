@@ -4,7 +4,7 @@ import { Autoplay } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 
 const HeroSwiper = ({ wrapperClass }: { wrapperClass: string }) => {
   return (

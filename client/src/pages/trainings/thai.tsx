@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import MuaiThai from '../../components/MuaiThai';
 import Background from '../../components/UI/Background';
 import Discipline from '../../components/Discipline';
 import ButtonBack from '../../components/UI/ButtonBack';
+import MuaiThai from '@/components/disciplines/MuaiThai';
 
 const ThaiPage = () => {
   return (

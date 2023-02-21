@@ -1,18 +1,17 @@
+import { TrainerInterface } from '@/types';
 import { TrainerItem } from './TrainerItem';
 
-const TrainersList = ({ trainers, styles }) => {
+const TrainersList = ({
+  trainers,
+  styles,
+}: {
+  trainers: TrainerInterface[];
+  styles: { [key: string]: string };
+}) => {
   return (
     <div>
-      {trainers.map(({ id, image, name, text, disciplines }) => (
-        <TrainerItem
-          key={id}
-          id={id}
-          image={image}
-          name={name}
-          text={text}
-          disciplines={disciplines}
-          styles={styles}
-        />
+      {trainers.map((trainer) => (
+        <TrainerItem key={trainer.id} trainer={trainer} styles={styles} />
       ))}
     </div>
   );

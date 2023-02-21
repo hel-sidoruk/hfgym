@@ -19,9 +19,7 @@ const Classes = () => {
             <ClassCard styles={styles} key={id} text={text} />
           )
         )}
-        <Link
-          href="/schedule"
-          className={`${styles.openSchedule} btn btn-fill btn-arrow`}>
+        <Link href="/schedule" className={`${styles.openSchedule} btn btn-fill btn-arrow`}>
           Pасписание
         </Link>
       </div>

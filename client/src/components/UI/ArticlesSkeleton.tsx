@@ -1,5 +1,5 @@
 const ArticlesSkeleton = ({ styles, num }) => {
-  let arr = [];
+  const arr = [];
   for (let i = 0; i < num; i++) arr.push(i);
   return (
     <>

@@ -1,8 +1,8 @@
+import WrestlingKids from '@/components/disciplines/WrestlingKids';
 import Head from 'next/head';
 import Discipline from '../../components/Discipline';
 import Background from '../../components/UI/Background';
 import ButtonBack from '../../components/UI/ButtonBack';
-import WrestlingKids from '../../components/WrestlingKids';
 
 const WrestlingKidsPage = () => {
   return (

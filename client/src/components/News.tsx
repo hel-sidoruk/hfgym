@@ -47,12 +47,8 @@ const News = ({ news }) => {
         ))}
       </Swiper>
       <div className={styles.navBtns}>
-        <button className={`btn nav-btn nav-btn--left prev ${styles.navBtn}`}>
-          Назад
-        </button>
-        <button className={`btn nav-btn nav-btn--right next ${styles.navBtn}`}>
-          Вперед
-        </button>
+        <button className={`btn nav-btn nav-btn--left prev ${styles.navBtn}`}>Назад</button>
+        <button className={`btn nav-btn nav-btn--right next ${styles.navBtn}`}>Вперед</button>
       </div>
       <Link href="/blog" className={`btn btn-arrow ${styles.btn}`}>
         Перейти в блог

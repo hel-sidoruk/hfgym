@@ -1,15 +1,21 @@
 import Head from 'next/head';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import AboutHome from '../components/AboutHome';
 import Classes from '../components/Classes';
 import Hero from '../components/Hero';
 import SignUp from '../components/SignUp';
 import Background from '../components/UI/Background';
-// import News from '../components/News';
+import News from '../components/News';
 import RegistrationForm from '../components/RegistrationForm';
+import axios from 'axios';
 
 export default function Home() {
-  // const signRef = useRef<>();
+  const signRef = useRef<HTMLFormElement>(null);
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    axios.get('/api/articles').then(({ data }) => setNews(data));
+  }, []);
 
   return (
     <>
@@ -24,9 +30,9 @@ export default function Home() {
       <Hero home={true} />
       <AboutHome />
       <Classes />
-      {/* <SignUp signRef={signRef} /> */}
-      {/* <News news={news} /> */}
-      {/* <RegistrationForm signRef={signRef} /> */}
+      <SignUp signRef={signRef} />
+      <News news={news} />
+      <RegistrationForm signRef={signRef} />
     </>
   );
 }

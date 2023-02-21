@@ -4,35 +4,31 @@ import Dropdown from './UI/Dropdown';
 import styles from '../styles/form.module.scss';
 import Section from './UI/Section';
 import Subtitle from './UI/Subtitle';
-import { useForm } from 'react-hook-form';
-import Input from './UI/Input';
+import InputField from './UI/InputField';
 
-const RegistrationForm = ({ signRef }) => {
+const RegistrationForm = ({ signRef }: { signRef: React.RefObject<HTMLFormElement> }) => {
   const [day, setDay] = useState('');
   const [dayActive, setDayActive] = useState(false);
   const [discipline, setDiscipline] = useState('');
   const [disciplineActive, setDisciplineActive] = useState(false);
-  const [dayError, setDayError] = useState('');
-  const [disciplineError, setDisciplineError] = useState('');
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const [errors, setErrors] = useState({
+    nameError: '',
+    emailError: '',
+    dayError: '',
+    disciplineError: '',
+  });
 
   useEffect(() => {
-    if (day) setDayError('');
-    if (discipline) setDisciplineError('');
+    if (day) setErrors((state) => ({ ...state, dayError: '' }));
+    if (discipline) setErrors((state) => ({ ...state, disciplineError: '' }));
   }, [day, discipline]);
 
-  const onSubmit = (data) => {
-    if (!day || !discipline) {
-      if (!day) setDayError('Выберите день недели');
-      if (!discipline) setDisciplineError('Выберите тренировку');
-
-      return;
-    }
-    alert(JSON.stringify(data));
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!day) setErrors((state) => ({ ...state, dayError: 'Выберите день недели' }));
+    if (!discipline) setErrors((state) => ({ ...state, disciplineError: 'Выберите тренировку' }));
+    if (!discipline) setErrors((state) => ({ ...state, disciplineError: 'Выберите тренировку' }));
+    if (!discipline) setErrors((state) => ({ ...state, disciplineError: 'Выберите тренировку' }));
   };
 
   const handleDayClick = () => {
@@ -40,53 +36,51 @@ const RegistrationForm = ({ signRef }) => {
     discipline && setDiscipline('');
   };
 
-  const handleDisciplineClick = () => {
-    setDayActive(false);
-  };
+  const handleDisciplineClick = () => setDayActive(false);
 
   return (
     <Section sectionName={styles.box}>
       <Subtitle variant={styles.title}>
         Запишитесь на первую бесплатную тренировку, заполнив форму на сайте
       </Subtitle>
-      <form ref={signRef} className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+      <form ref={signRef} className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.field}>
-          <Input label="name" register={register} error={errors.name} />
-          {errors.name && <p className={`text ${styles.error}`}>{errors.name.message}</p>}
+          <InputField label="name" error={errors.nameError} />
+          {errors.nameError && <p className={`text ${styles.error}`}>{errors.nameError}</p>}
         </div>
         <div className={styles.field}>
-          <Input label="mail" register={register} error={errors.mail} />
-          {errors.mail && <p className={`text ${styles.error}`}>{errors.mail.message}</p>}
+          <InputField label="mail" error={errors.emailError} />
+          {errors.emailError && <p className={`text ${styles.error}`}>{errors.emailError}</p>}
         </div>
         <div className={styles.field}>
           <label onClick={() => setDayActive(true)}>День недели *</label>
           <Dropdown
             onClick={handleDayClick}
             active={dayActive}
-            setActive={setDayActive}
+            setActive={(value: boolean) => setDayActive(value)}
             state={day}
-            setState={setDay}
+            setState={(value: string) => setDay(value)}
             initialText={'Выберите день недели'}
-            error={dayError}
+            error={errors.dayError}
             values={['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота']}
           />
-          <p className={`text ${styles.error}`}>{dayError}</p>
+          <p className={`text ${styles.error}`}>{errors.dayError}</p>
         </div>
         <div className={styles.field}>
           <label onClick={() => setDisciplineActive(true)}>Тренировка *</label>
           <Dropdown
             onClick={handleDisciplineClick}
             active={disciplineActive}
-            setActive={setDisciplineActive}
+            setActive={(value: boolean) => setDisciplineActive(value)}
             state={discipline}
-            error={disciplineError}
-            setState={setDiscipline}
+            error={errors.disciplineError}
+            setState={(value: string) => setDiscipline(value)}
             initialText={'Выберите тренировку'}
             values={disciplinesByDay[day] ? disciplinesByDay[day] : []}
           />
-          <p className={`text ${styles.error}`}>{disciplineError}</p>
+          <p className={`text ${styles.error}`}>{errors.disciplineError}</p>
         </div>
-        <button onClick={handleSubmit} type="submit" className={`btn btn-fill ${styles.btn}`}>
+        <button type="submit" className={`btn btn-fill ${styles.btn}`}>
           Отправить
         </button>
       </form>

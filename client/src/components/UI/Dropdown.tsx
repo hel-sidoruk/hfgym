@@ -1,17 +1,28 @@
 import styles from '../../styles/dropdown.module.scss';
 
+interface Props {
+  values: string[];
+  initialText: string;
+  state: string;
+  setState: (s: string) => void;
+  onClick: () => void;
+  active: boolean;
+  error: string;
+  setActive: (b: boolean) => void;
+}
+
 const Dropdown = ({
   values,
+  initialText,
   state,
   setState,
-  initialText,
   active,
   setActive,
   onClick,
   error,
-}) => {
-  const handleClick = (e) => {
-    setState(e.target.innerText);
+}: Props) => {
+  const handleClick = (value: string) => {
+    setState(value);
     setActive(false);
   };
 
@@ -30,13 +41,11 @@ const Dropdown = ({
         {state}
       </div>
       <ul className={`${styles.list} ${active ? styles.listActive : ''}`}>
-        {values.length
-          ? values.map((el) => (
-              <li key={el} className={styles.item} onClick={handleClick}>
-                {el}
-              </li>
-            ))
-          : ''}
+        {values.map((el) => (
+          <li key={el} className={styles.item} onClick={() => handleClick(el)}>
+            {el}
+          </li>
+        ))}
       </ul>
     </div>
   );
