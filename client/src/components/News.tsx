@@ -6,14 +6,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import ArticlePreview from './ArticlePreview';
 import Link from 'next/link';
-import styles from '../styles/news.module.scss';
+import { PostInterface } from '@/types';
 
-const News = ({ news }) => {
+const News = ({ news }: { news: PostInterface[] }) => {
   return (
     <Section sectionName={'news'}>
       <Title>Последние новости</Title>
       <Swiper
-        className={styles.content}
+        className="news__content"
         modules={[Navigation]}
         speed={400}
         navigation={{
@@ -46,11 +46,11 @@ const News = ({ news }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className={styles.navBtns}>
-        <button className={`btn nav-btn nav-btn--left prev ${styles.navBtn}`}>Назад</button>
-        <button className={`btn nav-btn nav-btn--right next ${styles.navBtn}`}>Вперед</button>
+      <div className="news__navBtns">
+        <button className="btn nav-btn nav-btn--left prev news__navBtn">Назад</button>
+        <button className="btn nav-btn nav-btn--right next news__navBtn">Вперед</button>
       </div>
-      <Link href="/blog" className={`btn btn-arrow ${styles.btn}`}>
+      <Link href="/blog" className="btn btn-arrow news__btn">
         Перейти в блог
       </Link>
     </Section>

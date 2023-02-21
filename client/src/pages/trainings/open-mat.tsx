@@ -1,10 +1,9 @@
-import OpenMat from '@/components/disciplines/OpenMat';
+import { OpenMat } from '@/components/disciplines';
 import Head from 'next/head';
 import Discipline from '../../components/Discipline';
 import Background from '../../components/UI/Background';
 import ButtonBack from '../../components/UI/ButtonBack';
 import ImageAnimated from '../../components/UI/ImageAnimated';
-import styles from '../../styles/discipline.module.scss';
 
 const OpenMatPage = () => {
   return (
@@ -19,11 +18,11 @@ const OpenMatPage = () => {
       <ButtonBack />
       <Background page={'trains-page'} />
       <Discipline title="Открытый ковер">
-        <OpenMat styles={styles} />
+        <OpenMat />
       </Discipline>
       <ImageAnimated
         src={'/images/disciplines/grappling6.webp'}
-        className={`${styles.image} ${styles.imageLeft} ${styles.noRadius}`}
+        className="discipline__image discipline__imageLeft discipline__noRadius"
         alt={'Открытый ковер'}
       />
     </>

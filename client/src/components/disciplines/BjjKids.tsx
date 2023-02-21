@@ -1,14 +1,13 @@
-import GroupItem from './GroupItem';
-import Text from './UI/Text';
-import Title from './UI/Title';
-import styles from '../styles/discipline.module.scss';
-import ImageAnimated from './UI/ImageAnimated';
-import SignLink from './UI/SignLink';
+import GroupItem from '../GroupItem';
+import Text from '../UI/Text';
+import Title from '../UI/Title';
+import ImageAnimated from '../UI/ImageAnimated';
+import SignLink from '../UI/SignLink';
 
-const BjjKids = () => {
+export const BjjKids = () => {
   return (
     <>
-      <div className={styles.group}>
+      <div className="discipline__group">
         <GroupItem
           title={'Детская группа (4-10 лет)'}
           time={'18:30'}
@@ -26,7 +25,7 @@ const BjjKids = () => {
       </div>
       <SignLink />
       <div className="discipline-info">
-        <div className={`${styles.block} ${styles.right}`}>
+        <div className="discipline__block discipline__right">
           <Text variant="fz-20">
             <b>Бразильское джиу-джитсу</b> — это боевое искусство и международное спортивное
             единоборство. Его основа - борьба в партере, использование принципов рычагов, углов,
@@ -37,15 +36,15 @@ const BjjKids = () => {
           <ImageAnimated
             priority={true}
             src={'/images/disciplines/bjjkids4.webp'}
-            className={styles.image}
+            className="discipline__image"
             alt={'Бразильское джиу-джитсу'}
           />
         </div>
         <Title>Почему ребенку полезно заниматься бразильским джиу-джитсу?</Title>
-        <div className={styles.block}>
+        <div className="discipline__block">
           <ImageAnimated
             src={'/images/disciplines/bjjkids5.webp'}
-            className={`${styles.image} ${styles.imageLeft}`}
+            className="discipline__image discipline__imageLeft"
             alt={'Бразильское джиу-джитсу'}
           />
           <div>
@@ -62,7 +61,7 @@ const BjjKids = () => {
             </Text>
           </div>
         </div>
-        <div className={`${styles.block} ${styles.right}`}>
+        <div className="discipline__block discipline__right">
           <div>
             <Text variant={'right'}>
               Бразильское джиу-джитсу развивает базовые спортивные навыки. Это такой вид спорта,
@@ -78,15 +77,15 @@ const BjjKids = () => {
           </div>
           <ImageAnimated
             src={'/images/disciplines/bjjkids2.webp'}
-            className={`${styles.image} ${styles.imageLeft}`}
+            className="discipline__image discipline__imageLeft"
             alt={'Бразильское джиу-джитсу'}
           />
         </div>
 
-        <div className={styles.block}>
+        <div className="discipline__block">
           <ImageAnimated
             src={'/images/disciplines/bjjkids1.webp'}
-            className={styles.image}
+            className="discipline__image"
             alt={'Бразильское джиу-джитсу'}
           />
           <Text>
@@ -102,7 +101,7 @@ const BjjKids = () => {
             делает скучным и однообразным процесс закрепления технических действий в борьбе.
           </Text>
         </div>
-        <div className={`${styles.block} ${styles.right}`}>
+        <div className="discipline__block discipline__right">
           <div>
             <Text>
               Бразильское джиу-джитсу развивает дисциплину. Регулярное посещение тренировок требует
@@ -117,7 +116,7 @@ const BjjKids = () => {
           </div>
           <ImageAnimated
             src={'/images/disciplines/bjjkids3.webp'}
-            className={`${styles.image} ${styles.imageLeft}`}
+            className="discipline__image discipline__imageLeft"
             alt={'Бразильское джиу-джитсу'}
           />
         </div>
@@ -125,5 +124,3 @@ const BjjKids = () => {
     </>
   );
 };
-
-export default BjjKids;

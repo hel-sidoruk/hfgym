@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Background from '../../components/UI/Background';
 import Discipline from '../../components/Discipline';
 import ButtonBack from '../../components/UI/ButtonBack';
-import MuaiThai from '@/components/disciplines/MuaiThai';
+import { MuaiThai } from '@/components/disciplines';
 
 const ThaiPage = () => {
   return (

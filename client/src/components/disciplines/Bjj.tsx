@@ -5,10 +5,10 @@ import Subtitle from '../UI/Subtitle';
 import Title from '../UI/Title';
 import Text from '../UI/Text';
 
-const Bjj = ({ styles }: { styles: { [key: string]: string } }) => {
+export const Bjj = () => {
   return (
     <>
-      <div className={styles.group}>
+      <div className="discipline__group">
         <GroupItem
           title={'Утренняя группа'}
           time={'7:30'}
@@ -33,7 +33,7 @@ const Bjj = ({ styles }: { styles: { [key: string]: string } }) => {
       </div>
       <SignLink />
       <div className="discipline-info">
-        <div className={`${styles.block} ${styles.right}`}>
+        <div className="discipline__block discipline__right">
           <Text variant="fz-20">
             <b>Бразильское джиу-джитсу</b> — это боевое искусство и международное спортивное
             единоборство. Его основа - борьба в партере, использование принципов рычагов, углов,
@@ -44,7 +44,7 @@ const Bjj = ({ styles }: { styles: { [key: string]: string } }) => {
           <ImageAnimated
             priority={true}
             src={'/images/disciplines/bjj6.webp'}
-            className={styles.image}
+            className="discipline__image"
             alt={'Бразильское джиу-джитсу'}
           />
         </div>
@@ -57,10 +57,10 @@ const Bjj = ({ styles }: { styles: { [key: string]: string } }) => {
           Бразильское джиу-джитсу - это вера в себя, которую никто и никогда не сможет у вас
           отобрать.
         </Text>
-        <div className={styles.block}>
+        <div className="discipline__block">
           <ImageAnimated
             src={'/images/disciplines/bjj7.webp'}
-            className={`${styles.image} ${styles.imageLeft}`}
+            className="discipline__image discipline__imageLeft"
             alt={'Бразильское джиу-джитсу'}
           />
           <div>
@@ -75,7 +75,7 @@ const Bjj = ({ styles }: { styles: { [key: string]: string } }) => {
             </Text>
           </div>
         </div>
-        <div className={`${styles.block} ${styles.right}`}>
+        <div className="discipline__block discipline__right">
           <div>
             <Subtitle>Отдых и победа над стрессом</Subtitle>
             <Text>
@@ -87,14 +87,14 @@ const Bjj = ({ styles }: { styles: { [key: string]: string } }) => {
           </div>
           <ImageAnimated
             src={'/images/disciplines/bjj10.webp'}
-            className={`${styles.image} ${styles.imageLeft}`}
+            className="discipline__image discipline__imageLeft"
             alt={'Бразильское джиу-джитсу'}
           />
         </div>
-        <div className={styles.block}>
+        <div className="discipline__block">
           <ImageAnimated
             src={'/images/disciplines/bjj5.webp'}
-            className={styles.image}
+            className="discipline__image"
             alt={'Бразильское джиу-джитсу'}
           />
           <div>
@@ -109,7 +109,7 @@ const Bjj = ({ styles }: { styles: { [key: string]: string } }) => {
             </Text>
           </div>
         </div>
-        <div className={`${styles.block} ${styles.right}`}>
+        <div className="discipline__block discipline__right">
           <div>
             <Subtitle>Дисциплина</Subtitle>
             <Text>
@@ -126,7 +126,7 @@ const Bjj = ({ styles }: { styles: { [key: string]: string } }) => {
           </div>
           <ImageAnimated
             src={'/images/disciplines/bjj9.webp'}
-            className={`${styles.image} ${styles.imageLeft}`}
+            className="discipline__image discipline__imageLeft"
             alt={'Бразильское джиу-джитсу'}
           />
         </div>
@@ -140,5 +140,3 @@ const Bjj = ({ styles }: { styles: { [key: string]: string } }) => {
     </>
   );
 };
-
-export default Bjj;

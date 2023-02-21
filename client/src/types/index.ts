@@ -13,3 +13,11 @@ export interface ScheduleInterface {
   name: string;
   time: string;
 }
+
+export interface PostInterface {
+  id: number;
+  text: string;
+  title: string;
+  descr: string;
+  image: string;
+}

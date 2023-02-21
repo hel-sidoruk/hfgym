@@ -1,4 +1,4 @@
-import WrestlingKids from '@/components/disciplines/WrestlingKids';
+import { WrestlingKids } from '@/components/disciplines';
 import Head from 'next/head';
 import Discipline from '../../components/Discipline';
 import Background from '../../components/UI/Background';

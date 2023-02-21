@@ -1,4 +1,4 @@
-import Taekwondo from '@/components/disciplines/Taekwondo';
+import { Taekwondo } from '@/components/disciplines';
 import Head from 'next/head';
 import Discipline from '../../components/Discipline';
 import Background from '../../components/UI/Background';

@@ -1,15 +1,15 @@
-import Text from './UI/Text';
-import ImageAnimated from './UI/ImageAnimated';
-import Subtitle from './UI/Subtitle';
-import SignLink from './UI/SignLink';
+import Text from '../UI/Text';
+import ImageAnimated from '../UI/ImageAnimated';
+import Subtitle from '../UI/Subtitle';
+import SignLink from '../UI/SignLink';
 
-const OpenMat = ({ styles }: { styles: { [key: string]: string } }) => {
+export const OpenMat = () => {
   return (
     <div className="discipline-info">
       <Subtitle>
         Каждую субботу в 12:00 в нашем зале проходит открытый ковер по грэпплингу.
       </Subtitle>
-      <div className={`${styles.block} ${styles.right}`}>
+      <div className="discipline__block discipline__right">
         <Text>
           Зачем нужен открытый ковер? Он является одним из тестов спортсмена: позволяет определить
           его пробелы в технической части, тактической, а также в функциональной подготовке.
@@ -20,14 +20,14 @@ const OpenMat = ({ styles }: { styles: { [key: string]: string } }) => {
         <ImageAnimated
           priority={true}
           src={'/images/disciplines/grappling8.webp'}
-          className={styles.image}
+          className="discipline__image"
           alt={'Открытый ковер'}
         />
       </div>
-      <div className={styles.block}>
+      <div className="discipline__block">
         <ImageAnimated
           src={'/images/disciplines/grappling5.webp'}
-          className={`${styles.image} ${styles.imageLeft}`}
+          className="discipline__image discipline__imageLeft"
           alt={'Открытый ковер'}
         />
         <Text>
@@ -38,7 +38,7 @@ const OpenMat = ({ styles }: { styles: { [key: string]: string } }) => {
           противостоять, необходимо иметь опыт борьбы с такими соперниками.
         </Text>
       </div>
-      <div className={`${styles.block} ${styles.right}`}>
+      <div className="discipline__block discipline__right">
         <Text>
           Резюмируя, можно сказать, что именно во время открытого ковра вы сможете проверить свои
           силы в условиях максимального их напряжения, а также проявить свои навыки, приобретенные
@@ -47,14 +47,14 @@ const OpenMat = ({ styles }: { styles: { [key: string]: string } }) => {
         </Text>
         <ImageAnimated
           src={'/images/disciplines/grappling7.webp'}
-          className={styles.image}
+          className="discipline__image"
           alt={'Открытый ковер'}
         />
       </div>
-      <div className={styles.block}>
+      <div className="discipline__block">
         <ImageAnimated
           src={'/images/disciplines/grappling9.webp'}
-          className={`${styles.image} ${styles.imageLeft}`}
+          className="discipline__image discipline__imageLeft"
           alt={'Открытый ковер'}
         />
         <div>
@@ -65,7 +65,7 @@ const OpenMat = ({ styles }: { styles: { [key: string]: string } }) => {
           </Text>
           <Text variant={'fz-20'}>
             Если у Вас появились какие-то вопросы, с удовольствием ответим на них по телефону:{' '}
-            <a style={{ display: 'block' }} className={styles.link} href="tel:+375292765915">
+            <a style={{ display: 'block' }} className="discipline__link" href="tel:+375292765915">
               + 375(29) 276-59-15
             </a>
           </Text>
@@ -75,5 +75,3 @@ const OpenMat = ({ styles }: { styles: { [key: string]: string } }) => {
     </div>
   );
 };
-
-export default OpenMat;

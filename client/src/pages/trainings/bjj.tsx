@@ -1,10 +1,9 @@
-import Bjj from '@/components/disciplines/Bjj';
+import { Bjj } from '@/components/disciplines';
 import Head from 'next/head';
 import Discipline from '../../components/Discipline';
 import Background from '../../components/UI/Background';
 import ButtonBack from '../../components/UI/ButtonBack';
 import ImageAnimated from '../../components/UI/ImageAnimated';
-import styles from '../../styles/discipline.module.scss';
 
 const BjjPage = () => {
   return (
@@ -19,11 +18,11 @@ const BjjPage = () => {
       <ButtonBack />
       <Background page={'trains-page'} />
       <Discipline title="Бразильское джиу-джитсу">
-        <Bjj styles={styles} />
+        <Bjj />
       </Discipline>
       <ImageAnimated
         src={'/images/disciplines/bjj8.webp'}
-        className={`${styles.image} ${styles.imageLeft} ${styles.noRadius}`}
+        className="discipline__image discipline__imageLeft discipline__noRadius"
         alt={'Бразильское джиу-джитсу'}
       />
     </>

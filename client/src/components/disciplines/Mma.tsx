@@ -1,11 +1,10 @@
-import GroupItem from './GroupItem';
-import styles from '../styles/discipline.module.scss';
-import SignLink from './UI/SignLink';
+import GroupItem from '../GroupItem';
+import SignLink from '../UI/SignLink';
 
-const Mma = () => {
+export const Mma = () => {
   return (
     <>
-      <div className={`${styles.group} ${styles.centered}`}>
+      <div className="discipline__group discipline__centered">
         <GroupItem
           title={'Утренняя группа'}
           time={'18:30'}
@@ -18,5 +17,3 @@ const Mma = () => {
     </>
   );
 };
-
-export default Mma;

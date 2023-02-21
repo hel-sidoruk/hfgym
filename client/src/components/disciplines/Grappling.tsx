@@ -1,14 +1,14 @@
-import GroupItem from './GroupItem';
-import Text from './UI/Text';
-import Subtitle from './UI/Subtitle';
-import ImageAnimated from './UI/ImageAnimated';
-import Title from './UI/Title';
-import SignLink from './UI/SignLink';
+import GroupItem from '../GroupItem';
+import ImageAnimated from '../UI/ImageAnimated';
+import SignLink from '../UI/SignLink';
+import Subtitle from '../UI/Subtitle';
+import Title from '../UI/Title';
+import Text from '../UI/Text';
 
-const Grappling = ({ styles }: { styles: { [key: string]: string } }) => {
+export const Grappling = () => {
   return (
     <>
-      <div className={`${styles.group} ${styles.centered}`}>
+      <div className="discipline__group discipline__centered">
         <GroupItem
           title={'Утренняя группа'}
           time={'20:00'}
@@ -18,7 +18,7 @@ const Grappling = ({ styles }: { styles: { [key: string]: string } }) => {
       </div>
       <SignLink />
       <div className="discipline-info">
-        <div className={`${styles.block} ${styles.right}`}>
+        <div className="discipline__block discipline__right">
           <Text variant="fz-20">
             <b>Бразильское джиу-джитсу</b> — это боевое искусство и международное спортивное
             единоборство. Его основа - борьба в партере, использование принципов рычагов, углов,
@@ -29,7 +29,7 @@ const Grappling = ({ styles }: { styles: { [key: string]: string } }) => {
           <ImageAnimated
             priority={true}
             src={'/images/disciplines/grappling7.webp'}
-            className={styles.image}
+            className="discipline__image"
             alt={'Грэпплинг'}
           />
         </div>
@@ -42,10 +42,10 @@ const Grappling = ({ styles }: { styles: { [key: string]: string } }) => {
           Бразильское джиу-джитсу - это вера в себя, которую никто и никогда не сможет у вас
           отобрать.
         </Text>
-        <div className={styles.block}>
+        <div className="discipline__block">
           <ImageAnimated
             src={'/images/disciplines/grappling2.webp'}
-            className={`${styles.image} ${styles.imageLeft}`}
+            className="discipline__image discipline__imageLeft"
             alt={'Грэпплинг'}
           />
           <div>
@@ -67,7 +67,7 @@ const Grappling = ({ styles }: { styles: { [key: string]: string } }) => {
           заслуженный десерт из эндорфинов. Наш спорт учит отделять главное от второстепенного и
           будит так часто дремлющую силу любви к себе.
         </Text>
-        <div className={`${styles.block} ${styles.right}`}>
+        <div className="discipline__block discipline__right">
           <div>
             <Subtitle>Сила</Subtitle>
             <Text variant={'right'}>
@@ -81,14 +81,14 @@ const Grappling = ({ styles }: { styles: { [key: string]: string } }) => {
           </div>
           <ImageAnimated
             src={'/images/disciplines/grappling3.webp'}
-            className={styles.image}
+            className="discipline__image"
             alt={'Грэпплинг'}
           />
         </div>
-        <div className={styles.block}>
+        <div className="discipline__block">
           <ImageAnimated
             src={'/images/disciplines/grappling4.webp'}
-            className={`${styles.image} ${styles.imageLeft}`}
+            className="discipline__image discipline__imageLeft"
             alt={'Грэпплинг'}
           />
           <div>
@@ -116,5 +116,3 @@ const Grappling = ({ styles }: { styles: { [key: string]: string } }) => {
     </>
   );
 };
-
-export default Grappling;

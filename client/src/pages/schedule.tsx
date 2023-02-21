@@ -1,21 +1,16 @@
 import Head from 'next/head';
-import Background from '../components/UI/Background';
 import axios from 'axios';
-import Section from '../components/UI/Section';
-import Title from '../components/UI/Title';
-import ScheduleMobile from '../components/ScheduleMobile';
-import Schedule from '../components/Schedule';
-import styles from '../styles/schedule.module.scss';
-import SignLink from '../components/UI/SignLink';
 import { useEffect, useState } from 'react';
+import Background from '@/components/UI/Background';
+import Section from '@/components/UI/Section';
+import SignLink from '@/components/UI/SignLink';
+import Title from '@/components/UI/Title';
+import { ScheduleMobile, Schedule } from '@/components/Schedule';
 
 export default function SchedulePage() {
   const [schedule, setSchedule] = useState([]);
   useEffect(() => {
-    axios.get('/api/schedule').then(({ data }) => {
-      console.log(data);
-      setSchedule(data);
-    });
+    axios.get('/api/schedule').then(({ data }) => setSchedule(data));
   }, []);
   return (
     <>
@@ -29,8 +24,8 @@ export default function SchedulePage() {
       <Background page={'trains-page'} />
       <Section sectionName={'disciplines'}>
         <Title>Тренировки</Title>
-        <Schedule styles={styles} schedule={schedule} />
-        <ScheduleMobile styles={styles} schedule={schedule} />
+        <Schedule schedule={schedule} />
+        <ScheduleMobile schedule={schedule} />
         <SignLink />
       </Section>
     </>

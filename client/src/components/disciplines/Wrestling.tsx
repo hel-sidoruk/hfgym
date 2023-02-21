@@ -1,13 +1,12 @@
-import GroupItem from './GroupItem';
-import styles from '../styles/discipline.module.scss';
-import Text from './UI/Text';
-import ImageAnimated from './UI/ImageAnimated';
-import SignLink from './UI/SignLink';
+import GroupItem from '../GroupItem';
+import Text from '../UI/Text';
+import ImageAnimated from '../UI/ImageAnimated';
+import SignLink from '../UI/SignLink';
 
-const Wrestling = () => {
+export const Wrestling = () => {
   return (
     <>
-      <div className={styles.group}>
+      <div className="discipline__group">
         <GroupItem
           title={'Утренняя группа'}
           time={'8:00 (суббота - 10:00)'}
@@ -25,7 +24,7 @@ const Wrestling = () => {
       </div>
       <SignLink />
       <div className="discipline-info">
-        <div className={`${styles.block} ${styles.right}`}>
+        <div className="discipline__block discipline__right">
           <Text variant="fz-20">
             <b>Вольная борьба</b> — это олимпийский вид спорта, который достаточно популярен в нашей
             стране. У нас в Академии сильный тренерский штаб, и есть все возможности для развития в
@@ -37,21 +36,21 @@ const Wrestling = () => {
           <ImageAnimated
             priority={true}
             src={'/images/disciplines/wrestling1.webp'}
-            className={styles.image}
+            className="discipline__image"
             alt={'Вольная борьба'}
           />
         </div>
-        <div className={styles.block}>
+        <div className="discipline__block">
           <ImageAnimated
             src={'/images/disciplines/wrestling2.webp'}
-            className={`${styles.image} ${styles.imageLeft}`}
+            className="discipline__image discipline__imageLeft"
             alt={'Вольная борьба'}
           />
 
           <div>
             <Text>
               <b>Занятия вольной борьбой:</b>
-              <ul className={styles.list}>
+              <ul className="discipline__list">
                 <li>
                   способствуют формированию атлетической фигуры за счет проработки всех групп мышц;
                 </li>
@@ -74,7 +73,7 @@ const Wrestling = () => {
             </Text>
           </div>
         </div>
-        <div className={`${styles.block} ${styles.right}`}>
+        <div className="discipline__block discipline__right">
           <div>
             <Text>
               Наша секция по вольной борьбе в Holy Family Gym поможет справиться с психологическими
@@ -86,14 +85,14 @@ const Wrestling = () => {
           </div>
           <ImageAnimated
             src={'/images/disciplines/wrestling3.webp'}
-            className={styles.image}
+            className="discipline__image"
             alt={'Вольная борьба'}
           />
         </div>
-        <div className={styles.block}>
+        <div className="discipline__block">
           <ImageAnimated
             src={'/images/disciplines/wrestling4.webp'}
-            className={`${styles.image} ${styles.imageLeft}`}
+            className="discipline__image discipline__imageLeft"
             alt={'Вольная борьба'}
           />
           <div>
@@ -112,5 +111,3 @@ const Wrestling = () => {
     </>
   );
 };
-
-export default Wrestling;

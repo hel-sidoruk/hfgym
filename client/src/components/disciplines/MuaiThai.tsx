@@ -1,13 +1,12 @@
-import GroupItem from './GroupItem';
-import styles from '../styles/discipline.module.scss';
-import Text from './UI/Text';
-import ImageAnimated from './UI/ImageAnimated';
-import SignLink from './UI/SignLink';
+import GroupItem from '../GroupItem';
+import Text from '../UI/Text';
+import ImageAnimated from '../UI/ImageAnimated';
+import SignLink from '../UI/SignLink';
 
-const MuaiThai = () => {
+export const MuaiThai = () => {
   return (
     <>
-      <div className={`${styles.group} ${styles.centered}`}>
+      <div className="discipline__group discipline__centered">
         <GroupItem
           title={'Основная группа'}
           time={'20:00'}
@@ -18,7 +17,7 @@ const MuaiThai = () => {
       </div>
       <SignLink />
       <div className="discipline-info">
-        <div className={`${styles.block} ${styles.right}`}>
+        <div className="discipline__block discipline__right">
           <Text variant={'fz-20'}>
             <b>Тайский бокс</b> - это боевое искусство Таиланда, произошедшее из древнего тайского
             боевого искусства муай боран и схожее с другими индокитайскими боевыми искусствами,
@@ -31,14 +30,14 @@ const MuaiThai = () => {
           <ImageAnimated
             priority={true}
             src={'/images/disciplines/thai4.webp'}
-            className={styles.image}
+            className="discipline__image"
             alt={'Тайский бокс'}
           />
         </div>
-        <div className={styles.block}>
+        <div className="discipline__block">
           <ImageAnimated
             src={'/images/disciplines/thai6.webp'}
-            className={`${styles.image} ${styles.imageLeft}`}
+            className="discipline__image discipline__imageLeft"
             alt={'Тайский бокс'}
           />
           <div>
@@ -54,7 +53,7 @@ const MuaiThai = () => {
             </Text>
           </div>
         </div>
-        <div className={`${styles.block} ${styles.right}`}>
+        <div className="discipline__block discipline__right">
           <Text>
             Многие считают муай-тай жестоким видом спорта, путая его с банальной дракой. Однако,
             муай-тай – это техничный и красивый вид спорта. Занятия муай-тай научат не драться, а
@@ -63,14 +62,14 @@ const MuaiThai = () => {
           </Text>
           <ImageAnimated
             src={'/images/disciplines/thai2.webp'}
-            className={styles.image}
+            className="discipline__image"
             alt={'Тайский бокс'}
           />
         </div>
-        <div className={styles.block}>
+        <div className="discipline__block">
           <ImageAnimated
             src={'/images/disciplines/thai5.webp'}
-            className={`${styles.image} ${styles.imageLeft}`}
+            className="discipline__image discipline__imageLeft"
             alt={'Тайский бокс'}
           />
           <div>
@@ -91,5 +90,3 @@ const MuaiThai = () => {
     </>
   );
 };
-
-export default MuaiThai;
