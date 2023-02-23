@@ -8,7 +8,7 @@ import Burger from './UI/Burger';
 export const Header = () => {
   const { pathname } = useRouter();
   const [active, setActive] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const openMenu = () => setActive((state) => !state);
   const closeMenu = () => {

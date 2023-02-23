@@ -73,7 +73,9 @@
     }
   }
   &__list {
+    font-size: 18px;
+    color: $light;
+    line-height: 36px;
     list-style:inside;
   }
-
 }

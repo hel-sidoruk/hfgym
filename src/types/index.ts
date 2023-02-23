@@ -20,4 +20,5 @@ export interface PostInterface {
   title: string;
   descr: string;
   image: string;
+  createdAt: string;
 }

@@ -1,24 +1,23 @@
-import axios from 'axios';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
-import Articles from '../../components/Articles';
 import Background from '../../components/UI/Background';
 import Section from '../../components/UI/Section';
 import Title from '../../components/UI/Title';
-import ArticlesSkeleton from '../../components/UI/ArticlesSkeleton';
+import { BlogContent } from '@/components/Articles';
+import { getKnex } from '../../../knex';
+import { PostInterface } from '@/types';
 
-export default function BlogPage() {
-  const [isLoading, setLoading] = useState(false);
-  const [posts, setPosts] = useState([]);
+export async function getStaticProps() {
+  const knex = getKnex();
+  const data = await knex('articles').limit(10).orderBy('createdAt', 'desc');
+  const posts = JSON.parse(JSON.stringify(data));
+  const [{ count }] = await knex('articles').count();
 
-  useEffect(() => {
-    setLoading(true);
-    axios
-      .get('/api/articles')
-      .then(({ data }) => setPosts(data))
-      .finally(() => setLoading(false));
-  }, []);
+  return {
+    props: { posts, count: +count },
+  };
+}
 
+export default function BlogPage({ posts, count }: { posts: PostInterface[]; count: number }) {
   return (
     <>
       <Head>
@@ -31,9 +30,7 @@ export default function BlogPage() {
       <Background page={'blog-page'} />
       <Section sectionName="blog">
         <Title variant={'align-center'}>Блог</Title>
-        <div className="blog__content">
-          {isLoading ? <ArticlesSkeleton num={6} /> : <Articles posts={posts} />}
-        </div>
+        <BlogContent data={posts} count={count} />
       </Section>
     </>
   );
