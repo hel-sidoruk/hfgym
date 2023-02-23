@@ -73,9 +73,9 @@
       background-color: white;
     }
     &:hover {
-      color: #A44848;
+      color: $btn-primary;
       &::after {
-        background-color: #A44848;
+        background-color: $btn-primary;
       }
     }
   }

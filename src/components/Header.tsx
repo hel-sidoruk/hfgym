@@ -1,32 +1,40 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { navigationRoutes } from '../utils/navigationRoutes';
 import Burger from './UI/Burger';
 
 export const Header = () => {
   const { pathname } = useRouter();
   const [active, setActive] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(true);
 
-  const openMenu = () => {
-    active ? setActive(false) : setActive(true);
-  };
-
+  const openMenu = () => setActive((state) => !state);
   const closeMenu = () => {
     if (active) setActive(false);
   };
+  useEffect(() => {
+    if (pathname === '/') {
+      const setHeaderState = () => {
+        if (window.scrollY > 50 && !isScrolled) setIsScrolled(true);
+        if (window.scrollY < 50 && isScrolled) setIsScrolled(false);
+      };
+      window.addEventListener('scroll', setHeaderState);
+      return () => window.removeEventListener('scroll', setHeaderState);
+    }
+  }, [isScrolled, pathname]);
 
   return (
-    <header className="header">
+    <header className={`header ${isScrolled || pathname !== '/' ? 'scrolled' : ''}`}>
       <div className="container header__container">
         <Link href="/" className="header__logo">
           <Image
             priority={true}
-            src="/images/logo-header.png"
+            src="/images/logo-footer.png"
             alt="HolyFamily logo"
             fill
-            sizes="100vw"
+            sizes="70px"
           />
           Holy Family Gym
         </Link>

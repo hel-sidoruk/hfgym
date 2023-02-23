@@ -13,7 +13,6 @@
     padding: 0;
   }
   &__box {
-    background-color: rgba(#000, 0.5);
     position: relative;
   }
   &__loader {
@@ -103,7 +102,7 @@
     letter-spacing: 1px;
   }
   &__error {
-    color: #ff7171;
+    color: $error;
   }
   &__input {
     padding: 15px 20px;
@@ -125,7 +124,7 @@
     }
   }
   &__input-error {
-    background-color: rgba(#ff7171, 0.2);
-    border-color: #ff7171;
+    background-color: rgba($error, 0.2);
+    border-color: $error;
   }
 }

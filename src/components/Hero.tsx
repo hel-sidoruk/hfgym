@@ -11,7 +11,8 @@ const Hero = ({ home }: { home?: boolean }) => {
 
   return home ? (
     <section className="hero" onClick={handleClick}>
-      <HeroSwiper wrapperClass="hero__swiper" />
+      {/* <HeroSwiper wrapperClass="hero__swiper" /> */}
+      <video className="hero__video" src="/hfgym-video.mp4" muted loop autoPlay />
       <div className="container hero__container">
         <h1 className="hero__title">Holy family gym</h1>
         <p className="hero__descr">Зал единоборств в Минске</p>

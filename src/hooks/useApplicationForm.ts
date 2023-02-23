@@ -36,7 +36,7 @@ export function useApplicationForm(): ReturnType {
       setNameError('Вы не ввели имя');
       error = true;
     }
-    if (values.name.length < 2) {
+    if (values.name && values.name.length < 2) {
       setNameError('Имя не может быть короче двух символов');
       error = true;
     }
@@ -44,7 +44,7 @@ export function useApplicationForm(): ReturnType {
       setEmailError('Вы не ввели e-mail');
       error = true;
     }
-    if (!values.email.match(regex)) {
+    if (values.email && !values.email.match(regex)) {
       setEmailError('Некорректный email');
       error = true;
     }

@@ -64,12 +64,8 @@
     }
   }
   &__subtitle {
-    font-size: 26px;
-    line-height: 38px;
-    @media (max-width: 768px) {
-      font-size: 22px;
-      line-height: 34px;
-    }
+    font-size: 22px;
+    line-height: 34px;
   }
   &__hidden {
     position: absolute;

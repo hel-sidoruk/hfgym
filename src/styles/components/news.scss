@@ -1,4 +1,21 @@
 .news {
+  background: url('/images/hero4.webp') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(#000, 0.5);
+  }
+  .container {
+    position: relative;
+    z-index: 2;
+  }
   &__content {
     margin: 0 100px 50px !important;
     @media (max-width: 1280px) {

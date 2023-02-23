@@ -13,8 +13,8 @@
     pointer-events: none;
   }
   &.error {
-    background-color: rgba(#ff7171, 0.2);
-    border-color: #ff7171;
+    background-color: rgba($error, 0.2);
+    border-color: $error;
   }
   &.disabled {
     pointer-events: none;
