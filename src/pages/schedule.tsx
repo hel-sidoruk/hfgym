@@ -1,17 +1,23 @@
 import Head from 'next/head';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
 import Background from '@/components/UI/Background';
 import Section from '@/components/UI/Section';
 import SignLink from '@/components/UI/SignLink';
 import Title from '@/components/UI/Title';
 import { ScheduleMobile, Schedule } from '@/components/Schedule';
+import { getKnex } from '../../knex';
+import { ScheduleInterface } from '@/types';
 
-export default function SchedulePage() {
-  const [schedule, setSchedule] = useState([]);
-  useEffect(() => {
-    axios.get('/api/schedule').then(({ data }) => setSchedule(data));
-  }, []);
+export async function getStaticProps() {
+  const knex = getKnex();
+  const data = await knex('schedules');
+  const schedule = JSON.parse(JSON.stringify(data));
+
+  return {
+    props: { schedule },
+  };
+}
+
+export default function SchedulePage({ schedule }: { schedule: ScheduleInterface[] }) {
   return (
     <>
       <Head>

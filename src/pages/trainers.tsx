@@ -1,20 +1,23 @@
 import { TrainerItem } from '@/components/TrainerItem';
 import { TrainerInterface } from '@/types';
-import axios from 'axios';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import Background from '../components/UI/Background';
 import Section from '../components/UI/Section';
 import Title from '../components/UI/Title';
+import { getKnex } from '../../knex';
 
-export default function TrainersPage() {
-  const [trainers, setTrainers] = useState<TrainerInterface[]>([]);
+export async function getStaticProps() {
+  const knex = getKnex();
+  const data = await knex('trainers').orderBy('createdAt', 'asc');
+  const trainers = JSON.parse(JSON.stringify(data));
 
-  useEffect(() => {
-    axios.get('/api/trainers').then(({ data }) => setTrainers(data));
-  }, []);
+  return {
+    props: { trainers },
+  };
+}
 
+export default function TrainersPage({ trainers }: { trainers: TrainerInterface[] }) {
   return (
     <>
       <Head>
