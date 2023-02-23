@@ -4,14 +4,11 @@
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 100px;
-  background-color: rgba(#875F5F, 0.5);
-  box-shadow: 0 4px 10px 5px rgba(#000, 0.5);
+  padding: 10px 0;
   display: flex;
   align-items: center;
-  @media (max-width: 768px) {
-    min-height: 70px;
-  }
+  height: 170px;
+  transition: all .3s ease-in-out;
   &__container {
     width: 100%;
     display: flex;
@@ -21,13 +18,27 @@
   &__logo {
     font-size: 0;
     margin-right: 40px;
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     position: relative;
+    transition: all .3s ease-in-out;
     @media (max-width: 768px) {
       width: 70px;
       height: 70px;
     }
+  }
+  &.scrolled {
+    background-color: rgba($primary, 0.9);
+    box-shadow: 0 4px 10px 5px rgba(#000, 0.5);
+    padding: 0;
+    height: 100px;
+    .header__logo {
+      width: 90px;
+      height: 90px;
+    }
+  }
+  @media (max-width: 768px) {
+    height: 70px;
   }
   &__nav {
     display: flex;
@@ -58,9 +69,9 @@
     transform: translateX(0);
   }
   &__link {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 30px;
-    color: #fbfbfb;
+    color: $light;
     font-weight: 700;
     text-transform: uppercase;
     position: relative;
@@ -87,10 +98,9 @@
       bottom: -3px;
       transition: all .3s ease-in-out;
       transform: scale(0);
-      background-color: #ffdada;
+      background-color: $light;
     }
     &:hover {
-      color: #ffdada;
       &::after {
         transform: scale(1);
       }
@@ -105,12 +115,10 @@
     }
   }
   &__disabledLink {
-    color: #ffdada;
     pointer-events: none;
     display: inline-block;
     &::after {
       transform: scaleY(1);
-      background-color: #ffdada;
     }
   }
 }

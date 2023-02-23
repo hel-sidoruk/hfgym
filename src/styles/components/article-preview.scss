@@ -1,5 +1,5 @@
 .article-preview {
-  background-color: rgba(#111, 0.8);
+  background-color: rgba($black, 0.8);
   color: #fff;
   position: relative;
   height: 450px;
@@ -43,7 +43,7 @@
     left: 0;
     width: 100%;
     bottom: 0;
-    transform: translateY(43%);
+    transform: translateY(45%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

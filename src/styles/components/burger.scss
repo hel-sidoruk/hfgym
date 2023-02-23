@@ -7,7 +7,7 @@
   cursor: pointer;
   &:hover {
     span {
-      background-color: #A44848;
+      background-color: $btn-primary;
     }
   }
   @media (max-width: 900px) {

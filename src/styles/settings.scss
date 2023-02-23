@@ -9,12 +9,11 @@ html {
 @mixin scrollBar($width) {
   &::-webkit-scrollbar {
     width: $width;
-    background: #515151;
     height: 6px;
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: #442a2a;
+    background: $primary;
     &:hover {
       background: #7d4747;
     }
@@ -24,10 +23,10 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  font-family:"OpenSans", sans-serif;
+  font-family:"TenorSans", sans-serif;
   font-weight: 400;
   overflow-x: hidden;
-  background-color: #1F1A1A;
+  background-color: $dark;
   @include scrollBar(14px);
 }
 #__next {

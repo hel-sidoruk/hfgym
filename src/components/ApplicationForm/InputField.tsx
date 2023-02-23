@@ -13,7 +13,7 @@ interface Props {
 export const InputField = ({ label, error, value, setValue }: Props) => {
   return (
     <div className="form__field">
-      <label htmlFor={label}>E-mail *</label>
+      <label htmlFor={label}>{label === 'email' ? 'E-mail *' : 'Имя *'}</label>
       <input
         id={label}
         className={`form__input ${error ? 'form__input-error' : ''}`}
