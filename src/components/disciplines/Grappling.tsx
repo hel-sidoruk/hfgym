@@ -10,7 +10,7 @@ export const Grappling = () => {
     <>
       <div className="discipline__group discipline__centered">
         <GroupItem
-          title={'Утренняя группа'}
+          title={'Основная группа'}
           time={'20:00'}
           days={'Понедельник, среда, пятница'}
           trainer={'Евгений Рутко'}

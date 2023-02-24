@@ -17,7 +17,8 @@
     bottom: 0;
     @media (max-width: 768px) {
       position: unset;
-      padding: 50px 0;
+      padding-top: 50px;
+      padding-bottom: 50px;
     }
   }
   &__video {
@@ -71,10 +72,6 @@
       font-size: 46px;
       line-height: 64px;
     }
-    @media (max-width: 1280px) {
-      font-size: 46px;
-      line-height: 64px;
-    }
     @media (max-width: 900px) {
       font-size: 36px;
       line-height: 48px;
@@ -96,6 +93,30 @@
     box-shadow: 0 4px 6px 5px rgba(#000, 0.5);
     @media (max-width: 768px) {
       height: 65vh;
+    }
+    .container {
+      background-color: rgba(#000, 0.3);
+      max-width: unset;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+    @media (min-width: 900px) {
+      .hero__title {
+        font-size: 72px;
+        line-height: 96px;
+      }
+    }
+    @media (min-width: 768px) {
+      .hero__descr {
+        font-size: 32px;
+        line-height: 46px;
+      }
+    }
+    .hero__content {
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+      padding-bottom: 15vh;
     }
   }
 }

@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Discipline from '../../components/Discipline';
 import Background from '../../components/UI/Background';
 import ButtonBack from '../../components/UI/ButtonBack';
-import ImageAnimated from '../../components/UI/ImageAnimated';
 
 const OpenMatPage = () => {
   return (
@@ -20,11 +19,6 @@ const OpenMatPage = () => {
       <Discipline title="Открытый ковер">
         <OpenMat />
       </Discipline>
-      <ImageAnimated
-        src={'/images/disciplines/grappling6.webp'}
-        className="discipline__image discipline__imageLeft discipline__noRadius"
-        alt={'Открытый ковер'}
-      />
     </>
   );
 };

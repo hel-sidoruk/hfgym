@@ -6,7 +6,7 @@ export const Mma = () => {
     <>
       <div className="discipline__group discipline__centered">
         <GroupItem
-          title={'Утренняя группа'}
+          title={'Основная группа'}
           time={'18:30'}
           days={'Понедельник, среда, пятница'}
           trainer={'Павел Старицкий'}

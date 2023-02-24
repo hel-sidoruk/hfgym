@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Discipline from '../../components/Discipline';
 import Background from '../../components/UI/Background';
 import ButtonBack from '../../components/UI/ButtonBack';
-import ImageAnimated from '../../components/UI/ImageAnimated';
 
 const BjjPage = () => {
   return (
@@ -20,11 +19,6 @@ const BjjPage = () => {
       <Discipline title="Бразильское джиу-джитсу">
         <Bjj />
       </Discipline>
-      <ImageAnimated
-        src={'/images/disciplines/bjj8.webp'}
-        className="discipline__image discipline__imageLeft discipline__noRadius"
-        alt={'Бразильское джиу-джитсу'}
-      />
     </>
   );
 };
