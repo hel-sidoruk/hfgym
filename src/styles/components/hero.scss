@@ -1,17 +1,6 @@
 .hero {
-  height: 100vh;
   position: relative;
   box-shadow: 0 4px 6px 5px rgba(#000, 0.5);
-  // &::after {
-  //   content: "";
-  //   position: absolute;
-  //   z-index: -1;
-  //   top: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   right: 0;
-  //   background-color: rgba(#000, 0.5);
-  // }
   @media (max-width: 768px) {
     box-shadow: none;
   }
@@ -21,17 +10,18 @@
     align-items: center;
     flex-direction: column;
     height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
     @media (max-width: 768px) {
-      justify-content: flex-end;
-      padding-bottom: 15vh;
+      position: unset;
+      padding: 50px 0;
     }
   }
   &__video {
-    position: absolute;
-    z-index: -1;
     width: 100vw;
-    top: 0;
-    left: 0;
   }
   &__title {
     font-weight: 700;
@@ -42,11 +32,7 @@
     text-shadow: 8px 8px 6px rgba(0, 0, 0, 0.5);
     text-transform: uppercase;
     @media (max-width: 1280px) {
-      font-size: 84px;
-      line-height: 120px;
-    }
-    @media (max-width: 1280px) {
-      font-size: 84px;
+      font-size: 78px;
       line-height: 120px;
     }
     @media (max-width: 900px) {
@@ -57,11 +43,11 @@
       font-size: 42px;
       line-height: 56px;
     }
-    @media (max-width: 460px) {
-      font-size: 37px;
+    @media (max-width: 480px) {
+      font-size: 34px;
     }
     @media (max-width: 400px) {
-      font-size: 28px;
+      font-size: 26px;
     }
   }
   &__swiper {
@@ -97,9 +83,9 @@
       font-size: 24px;
       line-height: 32px;
     }
-    @media (max-width: 400px) {
-      font-size: 18px;
-      line-height: 26px;
+    @media (max-width: 480px) {
+      font-size: 16px;
+      line-height: 24px;
     }
   }
   &__about {

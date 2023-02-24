@@ -1,5 +1,5 @@
 .about-home {
-  background-image: url('../../assets/backgrounds/home-back.webp');
+  background: url('../../assets/backgrounds/home-back.webp') no-repeat center;
   background-attachment: fixed;
   position: relative;
   &::after {

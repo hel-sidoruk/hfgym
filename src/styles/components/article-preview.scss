@@ -47,6 +47,9 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    @media (max-width: 666px) and (min-width: 577px) {
+      transform: translateY(52%);
+    }
     @media (max-width: 420px) {
       padding: 20px 12px;
     }

@@ -40,8 +40,12 @@
     width: 40%;
   }
   &__loader {
-    height: 20px;
-    background-color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .loader {
+      margin: 10px 0;
+    }
   }
 }
 .blog-preview {
