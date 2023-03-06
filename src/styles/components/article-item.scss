@@ -2,13 +2,10 @@
   &__block {
     padding-top: 200px;
     padding-bottom: 100px;
-    @media (max-width: 1024px) {
-      padding-top: 150px;
-      padding-bottom: 50px;
-    }
   }
   &__content {
     background-color: rgba($black, 0.9);
+    min-height: 400px;
     padding: 90px 50px;
     border-radius: 20px;
     display: flex;

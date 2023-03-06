@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { navigationRoutes } from '../utils/navigationRoutes';
 import Burger from './UI/Burger';
 
-export const Header = ({ className }: { className: string }) => {
+export const Header = () => {
   const { pathname } = useRouter();
   const [active, setActive] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +26,7 @@ export const Header = ({ className }: { className: string }) => {
   }, [isScrolled, pathname]);
 
   return (
-    <header className={`header ${className} ${isScrolled || pathname !== '/' ? 'scrolled' : ''}`}>
+    <header className={`header ${isScrolled || pathname !== '/' ? 'scrolled' : ''}`}>
       <div className="container header__container">
         <Link href="/" className="header__logo" as="image">
           <Image priority src="/images/logo-footer.png" alt="HolyFamily logo" fill sizes="70px" />
@@ -41,7 +41,7 @@ export const Header = ({ className }: { className: string }) => {
               key={id}
               href={to}
               onClick={closeMenu}
-              className={`header__link ${pathname === to ? 'header__disabledLink' : ''}`}
+              className={`header__link ${pathname === to ? 'disabled' : ''}`}
             >
               {text}
             </Link>

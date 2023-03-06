@@ -9,50 +9,32 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  &.home-page {
-    background-image: url('../assets/backgrounds/home-back.webp');
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(#000, 0.5);
   }
   &.about-page {
     background-image: url('../assets/backgrounds/about-back3.webp');
   }
   &.blog-page {
     background-image: url('../assets/backgrounds/articles-back.webp');
+    &::after {
+      content: unset;
+    }
   }
   &.trains-page {
     background-image: url('../assets/backgrounds/hall.webp');
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(#000, 0.5);
-    }
   }
   &.trainers-page {
     background-image: url('../assets/backgrounds/trainers-back.webp');
     background-position: right;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(#000, 0.5);
-    }
   }
   &.contacts-page {
     background-image: url('../assets/backgrounds/big-logo.webp');
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(#000, 0.7);
-    }
   }
 }

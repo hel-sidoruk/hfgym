@@ -12,20 +12,19 @@ const ArticlePage = () => {
   const { query } = useRouter();
 
   useEffect(() => {
-    axios.get(`/api/articles/${query.id}`).then(({ data }) => setPost(data[0]));
+    if (query.id) axios.get(`/api/articles/${query.id}`).then(({ data }) => setPost(data[0]));
   }, [query.id]);
 
-  if (!post) return <></>;
   return (
     <>
       <Head>
         <title> Holy Family Gym</title>
-        <title>{post.title || ''} | Holy Family Gym</title>
-        <meta name="description" content={post.descr} />
+        <title>{post ? post.title : ''} | Holy Family Gym</title>
+        <meta name="description" content={post ? post.descr : ''} />
       </Head>
       <ButtonBack />
       <Background page={'blog-page'} />
-      <ArticleItem title={post.title} image={`/images/articles/${post.image}`} text={post.text} />
+      <ArticleItem post={post} />
     </>
   );
 };

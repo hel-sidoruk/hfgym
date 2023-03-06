@@ -38,7 +38,7 @@ const News = ({ news }: { news: PostInterface[] }) => {
         {news.map(({ id, image, title, descr }) => (
           <SwiperSlide key={id}>
             <ArticlePreview
-              image={`/images/articles/${image.replace('.jpg', '.webp')}`}
+              image={`/images/articles/${image}`}
               title={title}
               descr={descr}
               id={id}

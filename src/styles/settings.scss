@@ -29,11 +29,14 @@ body {
   color: $light;
   @include scrollBar(14px);
 }
-#__next {
+.site-container {
   min-height: 100vh;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+}
+main {
+  flex-grow: 1;
 }
 img {
   max-width: 100%;

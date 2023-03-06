@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Footer = ({ className }: { className: string }) => {
+const Footer = () => {
   return (
-    <footer className={`footer ${className}`}>
+    <footer className="footer">
       <div className="container footer__container">
         <Link href="/" className="footer__logo" as="image">
           <Image src="/images/logo-footer.png" alt="HolyFamily logo" fill sizes="30vw" />

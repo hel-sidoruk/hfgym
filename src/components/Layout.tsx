@@ -25,10 +25,12 @@ export default function Layout({ children, className }: Props) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header className={className} />
-      {showPreloader && <Preloader />}
-      <main className={className}>{children}</main>
-      <Footer className={className} />
+      <div className={`site-container ${className}`}>
+        <Header />
+        {showPreloader && <Preloader />}
+        <main>{children}</main>
+        <Footer />
+      </div>
     </>
   );
 }
