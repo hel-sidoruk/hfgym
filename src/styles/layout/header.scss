@@ -9,6 +9,7 @@
   align-items: center;
   height: 170px;
   transition: all .3s ease-in-out;
+  background: linear-gradient(to bottom, #000, transparent);
   @media (max-width: 900px) {
     height: 120px;
   }
@@ -35,7 +36,7 @@
     }
   }
   &.scrolled {
-    background-color: rgba($primary, 0.9);
+    background: rgba($primary, 0.9);
     box-shadow: 0 4px 10px 5px rgba(#000, 0.5);
     padding: 0;
     height: 100px;

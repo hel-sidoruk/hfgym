@@ -5,6 +5,7 @@ import Title from '../../components/UI/Title';
 import { BlogContent } from '@/components/Articles';
 import { getKnex } from '../../../knex';
 import { PostInterface } from '@/types';
+import { useBackToTopBtn } from '@/hooks/useBackToTopBtn';
 
 export async function getStaticProps() {
   const knex = getKnex();
@@ -18,6 +19,10 @@ export async function getStaticProps() {
 }
 
 export default function BlogPage({ posts, count }: { posts: PostInterface[]; count: number }) {
+  const [isScrolled] = useBackToTopBtn();
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
   return (
     <>
       <Head>
@@ -32,6 +37,7 @@ export default function BlogPage({ posts, count }: { posts: PostInterface[]; cou
         <Title variant={'align-center'}>Блог</Title>
         <BlogContent data={posts} count={count} />
       </Section>
+      <button className={`btn-up ${isScrolled ? '' : 'hidden'}`} onClick={scrollToTop}></button>
     </>
   );
 }

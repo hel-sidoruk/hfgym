@@ -1,7 +1,6 @@
 module.exports = {
   client: 'pg',
-  connection:
-    'postgres://qijehlsv:dpxkxAEGemlT7GXYQonjqPm02J0PSVbk@surus.db.elephantsql.com/qijehlsv',
+  connection: process.env.DB_LINK,
   migrations: {
     directory: './knex/migrations',
   },
