@@ -1,7 +1,18 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import Layout from '../components/Layout';
+import localFont from '@next/font/local';
 import '../styles/globals.scss';
+
+const tenorSans = localFont({
+  src: [
+    {
+      path: './TenorSans.woff',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -19,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/maskable_icon.png" />
       </Head>
-      <Layout>
+      <Layout className={tenorSans.className}>
         <Component {...pageProps} />
       </Layout>
     </>

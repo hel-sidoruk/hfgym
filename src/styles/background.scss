@@ -33,6 +33,15 @@
   &.trainers-page {
     background-image: url('../assets/backgrounds/trainers-back.webp');
     background-position: right;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(#000, 0.5);
+    }
   }
   &.contacts-page {
     background-image: url('../assets/backgrounds/big-logo.webp');

@@ -12,7 +12,7 @@ const ClassCard = ({ image, text, to }: Props) => {
     <div className={`classes__card ${!image ? 'classes__noImage' : ''}`}>
       {image && (
         <div className="classes__image">
-          <Image src={image} alt={text} fill sizes="100vw" />
+          <Image src={image} alt={text} fill sizes="30vw" />
         </div>
       )}
       {to ? <Link href={to}>{text}</Link> : <h3>{text}</h3>}

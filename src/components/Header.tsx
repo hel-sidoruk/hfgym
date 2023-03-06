@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { navigationRoutes } from '../utils/navigationRoutes';
 import Burger from './UI/Burger';
 
-export const Header = () => {
+export const Header = ({ className }: { className: string }) => {
   const { pathname } = useRouter();
   const [active, setActive] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,16 +26,10 @@ export const Header = () => {
   }, [isScrolled, pathname]);
 
   return (
-    <header className={`header ${isScrolled || pathname !== '/' ? 'scrolled' : ''}`}>
+    <header className={`header ${className} ${isScrolled || pathname !== '/' ? 'scrolled' : ''}`}>
       <div className="container header__container">
-        <Link href="/" className="header__logo">
-          <Image
-            priority={true}
-            src="/images/logo-footer.png"
-            alt="HolyFamily logo"
-            fill
-            sizes="70px"
-          />
+        <Link href="/" className="header__logo" as="image">
+          <Image priority src="/images/logo-footer.png" alt="HolyFamily logo" fill sizes="70px" />
           Holy Family Gym
         </Link>
         <nav

@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Footer = () => {
+const Footer = ({ className }: { className: string }) => {
   return (
-    <footer className="footer">
+    <footer className={`footer ${className}`}>
       <div className="container footer__container">
-        <Link href="/" className="footer__logo">
-          <Image src="/images/logo-footer.png" alt="HolyFamily logo" fill sizes="100vw" />
+        <Link href="/" className="footer__logo" as="image">
+          <Image src="/images/logo-footer.png" alt="HolyFamily logo" fill sizes="30vw" />
         </Link>
         <div className="footer__info">
           <p className="footer__text">Мы в социальных сетях:</p>
@@ -17,7 +17,7 @@ const Footer = () => {
               href="https://vk.com/bjj_holyfamilygym"
               rel="noreferrer"
             >
-              <Image src="/icons/vk.svg" alt="vk icon" fill sizes="100vw" />
+              <Image src="/icons/vk.svg" alt="vk icon" fill sizes="20vw" />
             </a>
             <a
               target="_blank"
@@ -25,7 +25,7 @@ const Footer = () => {
               href="https://www.instagram.com/holyfamilygym/"
               rel="noreferrer"
             >
-              <Image src="/icons/instagram.svg" alt="instagram icon" fill sizes="100vw" />
+              <Image src="/icons/instagram.svg" alt="instagram icon" fill sizes="20vw" />
             </a>
             <a
               target="_blank"
@@ -33,7 +33,7 @@ const Footer = () => {
               href="https://facebook.com/HolyFamilyGym/"
               rel="noreferrer"
             >
-              <Image src="/icons/fb.svg" alt="facebook icon" fill sizes="100vw" />
+              <Image src="/icons/fb.svg" alt="facebook icon" fill sizes="20vw" />
             </a>
           </div>
           <a className="footer__text footer__tel" href="tel:+375292765915">

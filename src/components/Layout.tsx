@@ -5,7 +5,11 @@ import Footer from './Footer';
 import { Header } from './Header';
 import { Preloader } from './UI/Preloader';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+interface Props {
+  children: React.ReactNode;
+  className: string;
+}
+export default function Layout({ children, className }: Props) {
   const [showPreloader, setShowPreloader] = useState(true);
   const { pathname } = useRouter();
   useEffect(() => {
@@ -21,10 +25,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header className={className} />
       {showPreloader && <Preloader />}
-      <main>{children}</main>
-      <Footer />
+      <main className={className}>{children}</main>
+      <Footer className={className} />
     </>
   );
 }

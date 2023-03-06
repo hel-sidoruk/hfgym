@@ -12,8 +12,6 @@
     cursor: unset;
     div:last-child {
       transform: translateY(0);
-      height: 100%;
-      box-shadow: 0 0 6px 4px rgba(#000, 0.5);
     }
     h3 {
       white-space: unset;
@@ -21,7 +19,6 @@
     p {
       transform: scaleY(1);
       white-space: unset;
-
     }
   }
   @media (max-width: 640px) {
@@ -37,7 +34,7 @@
   }
   &__bottom {
     padding: 25px 30px;
-    background-color: rgba($black, 0.8);
+    background-color: rgba($black, 0.9);
     position: absolute;
     transition: all .3s ease-in-out;
     left: 0;
