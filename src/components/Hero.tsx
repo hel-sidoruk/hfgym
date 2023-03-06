@@ -1,15 +1,8 @@
 import Image from 'next/image';
 
 const Hero = ({ home }: { home?: boolean }) => {
-  const handleClick = () => {
-    window.scrollTo({
-      top: window.innerHeight - 100,
-      behavior: 'smooth',
-    });
-  };
-
   return home ? (
-    <section className="hero" onClick={handleClick}>
+    <section className="hero">
       <video className="hero__video" src="/hfgym-video.mp4" muted loop autoPlay />
       <div className="container hero__container">
         <h1 className="hero__title">Holy family gym</h1>
@@ -17,7 +10,7 @@ const Hero = ({ home }: { home?: boolean }) => {
       </div>
     </section>
   ) : (
-    <section className="hero__about" onClick={handleClick}>
+    <section className="hero__about">
       <Image
         priority={true}
         src="/images/about-hero.webp"

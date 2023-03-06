@@ -7,7 +7,6 @@ export function animateSVG() {
 
   paths.forEach((element) => {
     const elementLen = element.getTotalLength();
-    console.log(elementLen);
     len += elementLen;
   });
 
