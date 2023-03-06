@@ -5,12 +5,6 @@
   }
   &.disciplines {
     padding-top: 200px;
-    @media (max-width: 1024px) {
-      padding-top: 180px;
-    }
-    @media (max-width: 768px) {
-      padding-top: 150px;
-    }
   }
   &.trainers {
     padding: 150px 0;
