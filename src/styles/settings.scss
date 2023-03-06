@@ -76,3 +76,38 @@ ul {
 .swiper {
   height: 100%;
 }
+.preloader {
+  position: fixed;
+  background-color: $black;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1.8s ease-in-out;
+  svg {
+    fill: transparent;
+    transition: fill 1s ease-in-out, opacity .4s ease-in-out;
+  }
+  &.hide {
+    opacity: 0;
+    pointer-events: none;
+    svg {
+      opacity: 0;
+    }
+  }
+}
+.path_line {
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-name: line;
+}
+
+@keyframes line {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
