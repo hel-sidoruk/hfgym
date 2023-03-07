@@ -25,13 +25,19 @@ const GroupItem = ({ title, time, days, trainer, to }: Props) => {
         </div>
         <div className="group-item__field">
           <span className="group-item__smallText">Тренер:</span>
-          <Link
-            href={`/trainers${to}`}
-            scroll={false}
-            className="group-item__text group-item__link"
-          >
-            {trainer}
-          </Link>
+          {to ? (
+            <Link
+              href={`/trainers${to}`}
+              scroll={false}
+              className="group-item__text group-item__link"
+            >
+              {trainer}
+            </Link>
+          ) : (
+            <span className="group-item__text" style={{ cursor: 'default' }}>
+              {trainer}
+            </span>
+          )}
         </div>
       </div>
     </div>

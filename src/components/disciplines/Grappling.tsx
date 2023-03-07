@@ -14,6 +14,7 @@ export const Grappling = () => {
           time={'20:00'}
           days={'Понедельник, среда, пятница'}
           trainer={'Евгений Рутко'}
+          to="#evgeniy-rutko"
         />
       </div>
       <SignLink />

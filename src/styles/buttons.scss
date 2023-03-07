@@ -127,6 +127,7 @@
   background-color: $btn-primary;
   border-radius: 50%;
   transform: rotate(90deg);
+  z-index: 10;
   transition: all .3s ease-in-out;
   &:hover {
     filter: brightness(1.3);
