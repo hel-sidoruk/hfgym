@@ -7,8 +7,6 @@ import SignUp from '../components/SignUp';
 import News from '../components/News';
 import axios from 'axios';
 import { ApplicationForm } from '@/components/ApplicationForm';
-// import { Preloader } from '@/components/UI/Preloader';
-// import { Popup } from '@/components/UI/Popup';
 
 export default function Home() {
   const [news, setNews] = useState([]);
@@ -32,7 +30,6 @@ export default function Home() {
       <SignUp />
       <News news={news} />
       <ApplicationForm />
-      {/* <Popup /> */}
     </>
   );
 }

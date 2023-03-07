@@ -9,27 +9,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const day = req.body.day;
     const discipline = req.body.discipline;
     axios
-      .post(
-        'https://api.telegram.org/bot5828813441:AAFlrLmqyD-SgIOZ4D_m0ZUWMN_SqCf-abg/sendMessage',
-        {
-          chat_id: -837433131,
-          text: `Оставлена новая заявка
+      .post(`https://api.telegram.org/${process.env.TELEGRAM_BOT}/sendMessage`, {
+        chat_id: process.env.CHAT_ID,
+        text: `Оставлена новая заявка
 Имя: ${name}
 Email: ${email}
 День недели: ${day}
 Тренировка: ${discipline}`,
-        }
-      )
+      })
       .catch((err) => console.log(err));
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'hfgym.minsk@gmail.com',
-        pass: 'ggyzwjgrfdewrpim',
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASSWORD,
       },
     });
     const mailOptions = {
-      from: 'hfgym.minsk@gmail.com',
+      from: process.env.MAIL_USER,
       to: 'olya.sidoruk98@gmail.com',
       subject: 'Заявка с сайта',
       text: `Оставлена новая заявка
