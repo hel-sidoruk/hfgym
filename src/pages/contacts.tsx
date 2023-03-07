@@ -48,6 +48,12 @@ export default function ContactsPage() {
           </Text>
         </div>
         <div className="contacts__block">
+          <Subtitle variant="contacts__subtitle">Стоимость:</Subtitle>
+          <Text variant="contacts__text">Первая тренировка - бесплатно</Text>
+          <Text variant="contacts__text">Разовая тренировка - 15 рублей</Text>
+          <Text variant="contacts__text">Абонемент на месяц - 80 рублей</Text>
+        </div>
+        <div className="contacts__block">
           <Subtitle variant="contacts__subtitle">Наши социальные сети:</Subtitle>
           <a
             className="contacts__link vk"
