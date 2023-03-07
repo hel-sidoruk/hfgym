@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'TenorSans';
+  src: url('/TenorSans.woff') format('woff');
+  font-weight: 400;
+}
 html {
   box-sizing: border-box;
 }
@@ -24,6 +29,7 @@ body {
   margin: 0;
   min-width: 320px;
   font-weight: 400;
+  font-family: 'TenorSans', sans-serif;
   overflow-x: hidden;
   background-color: $dark;
   color: $light;
