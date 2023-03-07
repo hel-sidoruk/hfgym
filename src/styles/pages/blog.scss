@@ -20,25 +20,6 @@
       padding: 30px 20px;
     }
   }
-  &__skelet {
-    color: #fff;
-    animation: skeleton-loading 1s linear infinite alternate;
-    position: relative;
-    height: 335px;
-    display: flex;
-    &:not(:last-child) {
-      margin-bottom: 40px;
-    }
-  }
-  &__skeletImage {
-    background-color: rgba($dark, 0.6);
-    transition: all .3s ease-in-out;
-    padding: 20px 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 40%;
-  }
   &__loader {
     display: flex;
     justify-content: center;
@@ -120,12 +101,3 @@
     }
   }
 }
-@keyframes skeleton-loading {
-  0% {
-    background-color: rgba(#ddd, 0.3);
-  }
-  100% {
-    background-color: rgba(#ddd, 0.5);
-  }
-}
-

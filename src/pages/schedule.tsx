@@ -18,6 +18,7 @@ export async function getStaticProps() {
 }
 
 export default function SchedulePage({ schedule }: { schedule: ScheduleInterface[] }) {
+  console.log(schedule);
   return (
     <>
       <Head>

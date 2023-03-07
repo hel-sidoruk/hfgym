@@ -18,7 +18,7 @@ export const BjjKids = () => {
         <GroupItem
           title={'Детская группа (10-14 лет)'}
           time={'19:00'}
-          days={'Вторник, четверг'}
+          days={'Понедельник, среда, пятница'}
           trainer={'Евгений Акулич'}
           to={'#evgeniy-akulich'}
         />
