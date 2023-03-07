@@ -6,10 +6,11 @@ export const Schedule = ({ schedule }: { schedule: ScheduleInterface[] }) => {
   const monTueWen = schedule.filter(
     (el) => el.day.includes('Понедельник') || el.day.includes('Вторник')
   );
-  const timeArray1 = ['7:30', '8:00', '18:00', '18:30', '19:00', '20:00'];
+  const timeArray1 = ['7:30', '9:00', '18:00', '18:30', '19:00', '20:00'];
   const timeArray2 = [
     '7:30',
     '8:00',
+    '9:30',
     '10:00',
     '11:00',
     '12:00',

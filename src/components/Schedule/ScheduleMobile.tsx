@@ -7,8 +7,8 @@ export const ScheduleMobile = ({ schedule }: { schedule: ScheduleInterface[] }) 
   const saturday = schedule.filter((el) => el.day.includes('Суббота'));
 
   const timeArray1 = ['7:30', '18:00', '18:30', '19:00', '20:00'];
-  const timeArray2 = ['8:00', '18:30', '20:00'];
-  const timeArray3 = ['10:00', '11:00', '12:00'];
+  const timeArray2 = ['9:00', '18:30', '20:00'];
+  const timeArray3 = ['9:30', '10:00', '11:00', '12:00'];
 
   return (
     <div className="schedule__mobile">
