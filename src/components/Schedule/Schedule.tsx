@@ -9,7 +9,7 @@ export const Schedule = ({ schedule }: { schedule: ScheduleInterface[] }) => {
   const timeArray1 = ['7:30', '9:00', '18:00', '18:30', '19:00', '20:00'];
   const timeArray2 = [
     '7:30',
-    '8:00',
+    '9:00',
     '9:30',
     '10:00',
     '11:00',
