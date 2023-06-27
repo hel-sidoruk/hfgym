@@ -1,1 +1,1 @@
-Website for Holy Family Gym https://hfgym.vercel.app/
+Website for Holy Family Gym - https://hfgym.by
